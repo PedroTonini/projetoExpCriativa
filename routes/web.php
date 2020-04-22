@@ -14,7 +14,7 @@
 use App\Http\Controllers\SiteController;
 
 Route::get('/', 'SiteController@index');
-
 Route::get('/meta', 'SiteController@meta')->name('meta');
-
 Route::post('meta/save', 'SiteController@saveMeta')->name('meta.create');
+Route::get('/promocao', 'SiteController@promo')->name('promo');
+Route::get('/promocao/save', 'SiteController@savePromo')->name('promo.create');
