@@ -38,4 +38,16 @@ class SiteController extends Controller
         
         return view('index');
     }
+
+    public function colaborador(){
+        return view('colaborador');
+    }
+
+    public function saveColaborador(){
+        $promo = new Colaborador();
+        $promo->nome = request('nome');
+        $promo->save();
+        
+        return view('index');
+    }
 }

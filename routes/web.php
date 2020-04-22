@@ -18,3 +18,5 @@ Route::get('/meta', 'SiteController@meta')->name('meta');
 Route::post('meta/save', 'SiteController@saveMeta')->name('meta.create');
 Route::get('/promocao', 'SiteController@promo')->name('promo');
 Route::get('/promocao/save', 'SiteController@savePromo')->name('promo.create');
+Route::get('/colaborador', 'SiteController@colaborador')->name('colaborador');
+Route::get('/promocao/save', 'SiteController@saveColaborador')->name('colaborador.create');
