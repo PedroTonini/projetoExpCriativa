@@ -1,0 +1,1 @@
+<a href={{route("meta")}} class="btm"> Meta </a>
