@@ -2,4 +2,4 @@
 <br>
 <a href="{{ route("promo") }}">Promocao</a>
 <br>
-<a href="{{ route("colaborador") }}">Colaborador</a>
+<a href="{{ route("colaborador") }}">colaborador</a>
