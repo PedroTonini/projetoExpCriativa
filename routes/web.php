@@ -23,5 +23,5 @@ Route::get('/promocao/save', 'SiteController@saveColaborador')->name('colaborado
 Auth::routes();
 
 Route::get('/admin', function() {
-    return view('admin');
+    return view('admin.index');
 })->name('admin')->middleware('auth');

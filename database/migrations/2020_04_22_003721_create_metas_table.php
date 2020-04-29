@@ -17,7 +17,10 @@ class CreateMetasTable extends Migration
             $table->bigIncrements('id');
             $table->string('nome');
             $table->string('meta');
+            // $table->integer('func_id')->unsigned();
             $table->timestamps();
+
+            // $table->->references('id')->on->
         });
     }
 
