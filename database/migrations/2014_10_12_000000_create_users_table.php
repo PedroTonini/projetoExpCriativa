@@ -21,6 +21,12 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->integer('id');
+            $table->string('login');
+            $table->integer('CPF');
+            $table->date('dataNascimento');
+            $table->integer('telefone');
+            $table->integer('tipo');
         });
     }
 
