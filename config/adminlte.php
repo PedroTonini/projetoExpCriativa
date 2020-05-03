@@ -212,9 +212,39 @@ return [
         [
             'text' => 'Promoções',
             'url'  => 'admin/promo',
-            'icon' => 'fas fa-tags'
+            'icon' => 'fas fa-tags',
+        ],
+
+        [
+            'text' => 'Metas',
+            'url' => 'admin/metas',
+            'icon' => 'fas fa-bullseye', 
+            'submenu' => [
+                            [
+                                'text' => 'Individuais',
+                                'url'  => '#',
+                                'icon' => 'fas fa-user',
+                            ],
+                            [
+                                'text' => 'Gerais',
+                                'url'  => '#',
+                                'icon' => 'fas fa-users',
+                            ],
+                        ],
+        ],
+
+        [
+            'text' => 'Avaliações',
+            'url'  => 'admin/avaliacoes',
+            'icon' => 'far fa-star'
         ],
     
+        [
+            'text' => 'Funcionários',
+            'url'  => 'admin/funcionarios',
+            'icon' => 'fas fa-users'
+        ],
+
         // [
         //     'text' => 'search',
         //     'search' => true,
