@@ -23,11 +23,12 @@
 
             <br>
 
-            <input type="radio" name="opiAtend" class="far fa-star fa-2x radioOption">
-            <input type="radio" name="opiAtend" class="far fa-star fa-2x radioOption">
-            <input type="radio" name="opiAtend" class="far fa-star fa-2x radioOption">
-            <input type="radio" name="opiAtend" class="far fa-star fa-2x radioOption">
-            <input type="radio" name="opiAtend" class="far fa-star fa-2x radioOption">
+            <input type="hidden" name="opiAtendimento" id="opiAtendimento" value="0">
+            <i class="far fa-star fa-2x star-atendimento" data-index="0"></i>
+            <i class="far fa-star fa-2x star-atendimento" data-index="1"></i>
+            <i class="far fa-star fa-2x star-atendimento" data-index="2"></i>
+            <i class="far fa-star fa-2x star-atendimento" data-index="3"></i>
+            <i class="far fa-star fa-2x star-atendimento" data-index="4"></i>
 
             <br>
 
@@ -35,11 +36,12 @@
 
             <br>
 
-            <input type="radio" name="opiPreco" class="fa fa-star fa-2x radioOption">
-            <input type="radio" name="opiPreco" class="fa fa-star fa-2x radioOption">
-            <input type="radio" name="opiPreco" class="fa fa-star fa-2x radioOption">
-            <input type="radio" name="opiPreco" class="fa fa-star fa-2x radioOption">
-            <input type="radio" name="opiPreco" class="fa fa-star fa-2x radioOption">
+            <input type="hidden" name="opiPreco" id="opiPreco" value="0">
+            <i class="far fa-star fa-2x star-preco" data-index="0"></i>
+            <i class="far fa-star fa-2x star-preco" data-index="1"></i>
+            <i class="far fa-star fa-2x star-preco" data-index="2"></i>
+            <i class="far fa-star fa-2x star-preco" data-index="3"></i>
+            <i class="far fa-star fa-2x star-preco" data-index="4"></i>
 
             <br>
 
@@ -47,43 +49,28 @@
 
             <br>
 
-            <input type="radio" name="opiMarca" class="fa fa-star fa-2x radioOption">
-            <input type="radio" name="opiMarca" class="fa fa-star fa-2x radioOption">
-            <input type="radio" name="opiMarca" class="fa fa-star fa-2x radioOption">
-            <input type="radio" name="opiMarca" class="fa fa-star fa-2x radioOption">
-            <input type="radio" name="opiMarca" class="fa fa-star fa-2x radioOption">
+            <input type="hidden" name="opiMarcas" id="opiMarcas" value="0">
+            <i class="far fa-star fa-2x star-marcas" data-index="0"></i>
+            <i class="far fa-star fa-2x star-marcas" data-index="1"></i>
+            <i class="far fa-star fa-2x star-marcas" data-index="2"></i>
+            <i class="far fa-star fa-2x star-marcas" data-index="3"></i>
+            <i class="far fa-star fa-2x star-marcas" data-index="4"></i>
 
             <br>
 
             <h2 class="font"> Avalie nossos produtos: </h2>
 
             <br>
+            <input type="hidden" name="opiProduto" id="opiProduto" value="0">
+            <i class="far fa-star fa-2x star-produto" data-index="0"></i>
+            <i class="far fa-star fa-2x star-produto" data-index="1"></i>
+            <i class="far fa-star fa-2x star-produto" data-index="2"></i>
+            <i class="far fa-star fa-2x star-produto" data-index="3"></i>
+            <i class="far fa-star fa-2x star-produto" data-index="4"></i>
 
-            <i class="far fa-star fa-2x" data-index="0"></i>
-            <i class="far fa-star fa-2x" data-index="1"></i>
-            <i class="far fa-star fa-2x" data-index="2"></i>
-            <i class="far fa-star fa-2x" data-index="3"></i>
-            <i class="far fa-star fa-2x" data-index="4"></i>
-
-            <script src="{{URL::asset('js/jquery-3.5.0.js')}}"></script>
-            <script>
-                $(document).ready(function(){
-                    resetStarColors();
-
-                    $('.fa-star'.mouseover(function(){
-
-                        var currentIndex = parseInt($(this).data('index'));
-
-                        for(var i=0; i <= currentIndex; i++)
-                            $('.fa-star:eq('+i+')').css('color', 'orange');
-                    }));
-                });
-
-                function resetStarColors(){
-                    $('.fa-star').css('color', 'black');
-                }
-
-            </script>
+            <script src="{{ URL::asset('js/jquery-3.5.0.js') }}"></script>
+            <script src="{{ URL::asset('js/avaliacao.js') }}"></script>
+            
 
         </div>
     </div>

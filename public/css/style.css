@@ -30,3 +30,7 @@ body {
 .font {
     font-family: 'Open Sans Condensed', sans-serif;
 }
+
+.checked {
+    color: orange;
+}
