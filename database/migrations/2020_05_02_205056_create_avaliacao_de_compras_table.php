@@ -21,12 +21,10 @@ class CreateAvaliacaoDeComprasTable extends Migration
             $table->integer('opiProduto');
             $table->bigInteger('compra_id')->unsigned();
             $table->bigInteger('cliente_id')->unsigned();
-            $table->bigInteger('funcionario_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('compra_id')->references('id')->on('compras');
             $table->foreign('cliente_id')->references('id')->on('clientes');
-            $table->foreign('funcionario_id')->references('id')->on('funcionarios');
         });
     }
 

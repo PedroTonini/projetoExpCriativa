@@ -18,3 +18,5 @@ Route::get('/', 'SiteController@index');
 Route::get('/admin', function() {
     return view('admin.index');
 })->name('admin')->middleware('auth');
+
+Route::post('avaliacao/save', 'SiteController@avaliacaoCliente')->name('avaliacao.create');

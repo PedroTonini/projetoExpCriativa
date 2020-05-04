@@ -34,3 +34,7 @@ body {
 .checked {
     color: orange;
 }
+
+.fontTks{
+    font-family: 'Lora', serif;
+}
