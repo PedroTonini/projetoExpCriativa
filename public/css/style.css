@@ -1,0 +1,32 @@
+.radioOption{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+.radioOption:focus{
+    outline: none;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+.box {
+    width: 700px;
+    height: 600px;
+    background: #fff;
+}
+
+body {
+    margin: 0px;
+}
+
+.font {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
