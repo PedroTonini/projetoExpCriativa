@@ -15,10 +15,11 @@ class CreateSmsMarketingsTable extends Migration
     {
         Schema::create('sms_marketings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
-            $table->integer('id');
             $table->string('conteudo');
-            $table->integer('promocao_id');
+            $table->bigInteger('promocao_id')->unsigned();
+            $table->timestamps();
+
+            $table->foreign('promocao_id')->references('id')->on('promocaos');
         });
     }
 

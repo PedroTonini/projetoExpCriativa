@@ -16,12 +16,10 @@ class CreatePromocaosTable extends Migration
         Schema::create('promocaos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            $table->string('promocao');
+            $table->double('valor');
+            $table->timestamp('validade')->nullable();
+            $table->string('promoCode');
             $table->timestamps();
-            $table->integer('id');
-            $table->double('valorPromo');
-            $table->integer('validade');
-            $table->integer('promoCode');
         });
     }
 

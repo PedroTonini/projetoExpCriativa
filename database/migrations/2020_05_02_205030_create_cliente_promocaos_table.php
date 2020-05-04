@@ -14,8 +14,12 @@ class CreateClientePromocaosTable extends Migration
     public function up()
     {
         Schema::create('cliente_promocaos', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigInteger('cliente_id')->unsigned();
+            $table->bigInteger('promocao_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('cliente_id')->references('id')->on('clientes');
+            $table->foreign('promocao_id')->references('id')->on('promocaos');
         });
     }
 

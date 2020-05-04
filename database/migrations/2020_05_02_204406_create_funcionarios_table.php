@@ -15,13 +15,14 @@ class CreateFuncionariosTable extends Migration
     {
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('cargo_id')->unsigned()->nullable();
+            $table->date('dataAdmicao');
+            $table->integer('ferias')->default('30');
             $table->timestamps();
-            $table->integer('id');
-            $table->integer('user_id');
-            $table->integer('cargo_id');
-            $table->date('dataAdimicao');
-            $table->integer('ferias');
 
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('cargo_id')->references('id')->on('cargos');
         });
     }
 

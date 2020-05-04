@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\User;
+use App\Models\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -16,6 +16,28 @@ class UsersTableSeeder extends Seeder
             'name' => 'Administradores gerais',
             'email' => 'admin@avaliasys.com',
             'password' => bcrypt('123123'),
+            'CPF' => '00000000000',
+            'dataNascimento' => '0000-01-01',
+            'telefone' => '00000000000',
+            'tipo' => '3'
+        ]);
+        User::create([
+            'name' => 'Heloise Esther Marcela Monteiro',
+            'email' => 'heloisemonteiro@cbsaperfeicoamento.com',
+            'password' => bcrypt('123'),
+            'CPF' => '64207009493',
+            'dataNascimento' => '1944-05-17',
+            'telefone' => '67983821663',
+            'tipo' => '1'
+        ]);
+        User::create([
+            'name' => 'Marcelo Lara',
+            'email' => 'marcelolara@avaliasys.com',
+            'password' => bcrypt('123'),
+            'CPF' => '46729986220',
+            'dataNascimento' => '1991-01-04',
+            'telefone' => '83994415257',
+            'tipo' => '2'
         ]);
     }
 }

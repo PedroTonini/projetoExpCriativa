@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClienteLogadosTable extends Migration
+class CreateComprasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateClienteLogadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('cliente_logados', function (Blueprint $table) {
+        Schema::create('compras', function (Blueprint $table) {
             $table->bigIncrements('id');
+            // $table->string('nomeProduto');
+            $table->bigInteger('funcionario_id')->unsigned();
+            $table->string('CPFCliente');
+            $table->double('valorTotal');
             $table->timestamps();
-            $table->integer('id');
-            $table->integer('user_id');
+
+            $table->foreign('funcionario_id')->references('id')->on('funcionarios');
         });
     }
 
@@ -28,6 +32,6 @@ class CreateClienteLogadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cliente_logados');
+        Schema::dropIfExists('compras');
     }
 }

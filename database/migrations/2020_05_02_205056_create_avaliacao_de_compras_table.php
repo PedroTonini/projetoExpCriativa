@@ -15,14 +15,18 @@ class CreateAvaliacaoDeComprasTable extends Migration
     {
         Schema::create('avaliacao_de_compras', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->integer('opiAtendimento');
             $table->integer('opiPreco');
             $table->integer('opiMarca');
             $table->integer('opiProduto');
-            $table->integer('clienteLogado_id');
-            $table->integer('compra_id');
-            $table->integer('funcionario_id');
+            $table->bigInteger('compra_id')->unsigned();
+            $table->bigInteger('cliente_id')->unsigned();
+            $table->bigInteger('funcionario_id')->unsigned();
+            $table->timestamps();
+
+            $table->foreign('compra_id')->references('id')->on('compras');
+            $table->foreign('cliente_id')->references('id')->on('clientes');
+            $table->foreign('funcionario_id')->references('id')->on('funcionarios');
         });
     }
 
