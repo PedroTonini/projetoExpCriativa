@@ -15,6 +15,8 @@ use App\Http\Controllers\SiteController;
 
 Route::get('/', 'SiteController@index');
 
+Route::auth();
+
 Route::get('/admin', function() {
     return view('admin.index');
 })->name('admin')->middleware('auth');
