@@ -75,5 +75,20 @@ $(document).ready(function(){
             for (var i = 0; i <= opiAtendimento; i++)
                 $('.star-atendimento:eq('+i+')').addClass('fas checked');
     });
+
+    $('#btEnviar').on('click', function(){
+        var erro = false;
+        $('input').each(function(){
+            if (parseInt($(this).val()) == 0)
+                erro = true;
+        });
+        if (erro == true)
+            alert('ERRO! Por favor, nota mínima aceitável é uma estrela!');
+        
+        else
+            var form = document.getElementById('formAvaliacao');
+            form.submit();
+
+    });
 });
 

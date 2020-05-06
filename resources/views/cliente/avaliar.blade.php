@@ -19,7 +19,7 @@
 
     <div class="container">
         <div class="box" align="center">
-            <form action="{{route('avaliacao.create')}}" method="POST">
+            <form action="{{route('avaliacao.create')}}" method="POST" id="formAvaliacao">
 
                 @csrf
 
@@ -75,7 +75,7 @@
                 <br>
                 <br>
 
-                <button type="submit" class="btn btn-primary"> Enviar avaliação </button>
+                
 
                 <input type="hidden" name="compra_id" value="1">
                 <input type="hidden" name="cliente_id" value="1">
@@ -84,6 +84,7 @@
                 <script src="{{ URL::asset('js/avaliacao.js') }}"></script>
             
             </form>
+            <button type="button" class="btn btn-primary" id="btEnviar"> Enviar avaliação </button>
         </div>
     </div>
     
