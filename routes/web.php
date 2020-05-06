@@ -16,20 +16,20 @@ use App\Http\Controllers\SiteController;
 Route::get('/', 'SiteController@index');
 
 //rota admin
-/*
+
 Route::auth();
-Route::get('/admin', function() {
-    return view('admin.index');
-})->name('admin')->middleware('auth');
-Route::get('/admin/avaliacoes', function() {
-    return view('admin.avaliacoes.index');
-})->name('admin-avaliacoes')->middleware('auth');
-*/
+// Route::get('/admin', function() {
+//     return view('admin.index');
+// })->name('admin')->middleware('auth');
+// Route::get('/admin/avaliacoes', function() {
+//     return view('admin.avaliacoes.index');
+// })->name('admin-avaliacoes')->middleware('auth');
+
 
 Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'admin'], function(){
     Route::get('/', 'AdminController@index')->name('admin.index');
-    Route::resource('avaliacoes', 'AvaliacoesController');
-
+    Route::resource('avaliacoes/individual', 'AvaliacoesController');
+    Route::get('avaliacoes/dashboard', 'AvaliacoesController@dashboard');
 });
 
 

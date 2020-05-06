@@ -167,7 +167,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'admin',
 
     'logout_url' => 'logout',
 
@@ -214,30 +214,34 @@ return [
             'url'  => 'admin/promo',
             'icon' => 'fas fa-tags',
         ],
-
         [
-            'text' => 'Metas',
-            'url' => 'admin/metas',
-            'icon' => 'fas fa-bullseye', 
+            'text' => 'Cupons',
+            'url'  => 'admin/promo',
+            'icon' => 'fas fa-tags',
+        ],
+        [
+            'text' => 'Avaliações',
+            // 'url' => 'admin/metas',
+            'icon' => 'far fa-star', 
             'submenu' => [
                             [
-                                'text' => 'Individuais',
-                                'url'  => '#',
-                                'icon' => 'fas fa-user',
+                                'text' => 'Dashboard',
+                                'url'  => 'admin/avaliacoes/dashboard',
+                                'icon' => 'fas fa-chart-pie',
                             ],
                             [
-                                'text' => 'Gerais',
-                                'url'  => '#',
-                                'icon' => 'fas fa-users',
+                                'text' => 'Individuais',
+                                'url'  => 'admin/avaliacoes/individual',
+                                'icon' => 'fas fa-user',
                             ],
                         ],
         ],
 
-        [
-            'text' => 'Avaliações',
-            'url'  => 'admin/avaliacoes',
-            'icon' => 'far fa-star'
-        ],
+        // [
+        //     'text' => 'Avaliações',
+        //     'url'  => 'admin/avaliacoes',
+        //     'icon' => 'far fa-star'
+        // ],
     
         [
             'text' => 'Funcionários',

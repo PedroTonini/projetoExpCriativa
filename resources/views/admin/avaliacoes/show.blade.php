@@ -20,7 +20,7 @@
                         </tr>
                         <tr>
                             <td width="25%"><strong>Nome completo</strong></td>
-                            <td></td>
+                            <td>{{ $avaliacao->nome }}</td>
                         </tr>
                         <tr>
                             <td width="25%"><strong>Atendimento</strong></td>
