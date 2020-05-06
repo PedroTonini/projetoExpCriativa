@@ -81,7 +81,7 @@
                 <input type="hidden" name="cliente_id" value="1">
 
                 <script src="{{ URL::asset('js/jquery-3.5.0.js') }}"></script>
-                <script src="{{ URL::asset('js/avaliacao.js') }}"></script>
+                <script src="{{ URL::asset('js/avaliacaocliente.js') }}"></script>
             
             </form>
             <button type="button" class="btn btn-primary" id="btEnviar"> Enviar avaliação </button>
