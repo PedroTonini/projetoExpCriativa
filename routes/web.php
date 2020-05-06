@@ -30,6 +30,7 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
     Route::get('/', 'AdminController@index')->name('admin.index');
     Route::resource('avaliacoes/individual', 'AvaliacoesController');
     Route::get('avaliacoes/dashboard', 'AvaliacoesController@dashboard');
+    Route::resource('cupons', 'CuponsController');
 });
 
 

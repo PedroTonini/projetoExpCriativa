@@ -211,14 +211,10 @@ return [
         'MENU',
         [
             'text' => 'Promoções',
-            'url'  => 'admin/promo',
+            'url'  => 'admin/cupons/criar',
             'icon' => 'fas fa-tags',
         ],
-        [
-            'text' => 'Cupons',
-            'url'  => 'admin/promo',
-            'icon' => 'fas fa-tags',
-        ],
+      
         [
             'text' => 'Avaliações',
             // 'url' => 'admin/metas',
