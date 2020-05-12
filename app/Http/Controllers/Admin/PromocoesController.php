@@ -4,35 +4,28 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Promocao;
 
-class CuponsController extends Controller
+class PromocoesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        return view( 'admin.cupons.criar');
+        $promocoes = Promocao::get();
+        $variables = [
+            'promocoes' => $promocoes
+        ];
+        return view( 'admin.promocoes.index')->with($variables);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function criar()
     {
-        return view( 'admin.cupons.criar'); 
+        $teste = 'teste';
+        dd($teste);
+        return view('admin.promocoes.criar'); 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         //
@@ -57,7 +50,7 @@ class CuponsController extends Controller
      */
     public function edit($id)
     {
-        return view( 'admin.cupons.editar');
+        //
     }
 
     /**

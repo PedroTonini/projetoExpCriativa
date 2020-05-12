@@ -15,8 +15,6 @@ class SiteController extends Controller
     public function avaliacaoCliente(){
         $avaliacao = new AvaliacaoDeCompra();
 
-        // dd($avaliacao);
-
         $avaliacao->opiAtendimento = request('opiAtendimento');
         $avaliacao->opiPreco = request('opiPreco');
         $avaliacao->opiMarca = request('opiMarca');

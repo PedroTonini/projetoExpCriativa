@@ -211,7 +211,7 @@ return [
         'MENU',
         [
             'text' => 'Promoções',
-            'url'  => 'admin/cupons/criar',
+            'url'  => 'admin/promocoes',
             'icon' => 'fas fa-tags',
         ],
       
