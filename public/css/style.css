@@ -38,3 +38,9 @@ body {
 .fontTks{
     font-family: 'Lora', serif;
 }
+.divNegativa {
+    float: left;
+}
+.divPositiva {
+    float: right;
+}
