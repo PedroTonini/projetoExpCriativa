@@ -14,22 +14,44 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 
-<div class="col-lg-6 col-12 divNegativa">
-  <div class="small-box bg-danger">
-    <div class="inner">
-      <h3>44</h3>
-      <p>Ruins</p>
+<div id="atendimento">
+  <div class="col-lg-6 col-12 divNegativa">
+    <div class="small-box bg-danger">
+      <div class="inner">
+        <h3>44 ★-</h3>
+        <p>Ruins (atendimento)</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 col-12 divPositiva">
+    <div class="small-box bg-success">
+      <div class="inner">
+        <h3>10 4★+</h3>
+        <p>Ótimas (atendimento)</p>
+      </div>
     </div>
   </div>
 </div>
-<div class="col-lg-6 col-12 divPositiva">
-  <div class="small-box bg-success">
-    <div class="inner">
-      <h3>10<sup style="font-size: 20px"> 4★+</sup></h3>
-      <p>Ótimas</p>
+
+<div id="qualidade">
+  <div class="col-lg-6 col-12 divNegativa">
+    <div class="small-box bg-danger">
+      <div class="inner">
+        <h3>44 ★-</h3>
+        <p>Ruins (produtos)</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 col-12 divPositiva">
+    <div class="small-box bg-success">
+      <div class="inner">
+        <h3>10 4★+</h3>
+        <p>Ótimas (produtos)</p>
+      </div>
     </div>
   </div>
 </div>
+
 
 <div id="myfirstchart" style="height: 250px;"></div>  
 

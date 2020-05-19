@@ -18,10 +18,8 @@ class PromocoesController extends Controller
     }
 
 
-    public function criar()
+    public function create()
     {
-        $teste = 'teste';
-        dd($teste);
         return view('admin.promocoes.criar'); 
     }
 
