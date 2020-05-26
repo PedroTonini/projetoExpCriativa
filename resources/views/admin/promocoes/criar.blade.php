@@ -9,7 +9,8 @@
     <br>
     <br>
     
-    <form action="" method="post">
+    <form action="{{ URL::route('promocoes.store') }}" method="POST">
+    {!! csrf_field() !!}
         <div class="col-lg-6 col-12 container">
         <input class="form-control" type="text" name="nome" placeholder="Nome da promoção"> <br>
         <input class="form-control" type="textarea" name="descricao" placeholder="Descrição da promoção"> <br>

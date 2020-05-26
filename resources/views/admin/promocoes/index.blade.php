@@ -10,7 +10,7 @@
     <div class="container">
         <div class="box">
             <div>
-                <a href="{{ URL::to('admin/promocoes/criar') }}" class="btn btn-success">Criar</a>
+                <a href="{{ URL::route('promocoes.create') }}" class="btn btn-success">Criar</a>
             </div>
             <br>
             
@@ -39,8 +39,11 @@
                                 </td>
                                 <td>{{ $promocao->promoCode }}</td>
                                 <td>
-                                    <button class="btn btn-primary">Editar</button>
-                                    <button class="btn btn-danger">Excluir</button>
+                                <form action="{{ URL::to('admin/promocoes/'.$promocao->id) }}" method="POST" onsubmit="if (!confirm('Deseja realmente excluir essa promoção? Lembrando que o cliente que tiver essa promoção, ainda poderá utilizá-la.')) return false;">
+                                <input type="hidden" name="_method" value="DELETE">
+                                    {{ csrf_field() }}
+                                <a href="{{ URL::to('admin/promocoes/edit/'.$promocao->id) }}" class="btn btn-sm btn-primary">Editar</a>
+                                    <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
                                 </td>
                             </tr>
                         @endforeach
