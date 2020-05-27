@@ -20,6 +20,7 @@ class CreatePromocaosTable extends Migration
             $table->timestamp('validade')->nullable();
             $table->string('promoCode');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
