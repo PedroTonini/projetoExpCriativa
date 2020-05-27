@@ -11,12 +11,6 @@
     <title> Avalie-nos :) </title>
 </head>
 <body>
-    {{-- <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star"></span>
-    <span class="fa fa-star"></span> --}}
-
     <div class="container">
         <div class="box" align="center">
             <form action="{{route('avaliacao.create')}}" method="POST" id="formAvaliacao">
@@ -86,7 +80,6 @@
             </form>
             <button type="button" class="btn btn-primary" id="btEnviar"> Enviar avaliação </button>
         </div>
-    </div>
-    
+    </div> 
 </body>
 </html>

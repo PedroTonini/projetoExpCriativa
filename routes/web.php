@@ -39,3 +39,5 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
 
 
 Route::post('avaliacao/save', 'SiteController@avaliacaoCliente')->name('avaliacao.create');
+
+Route::get('/cliente/home', 'Cliente\ClienteController@index')->name('cliente.home');

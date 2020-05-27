@@ -44,6 +44,7 @@ body {
 .divPositiva {
     float: right;
 }
+<<<<<<< HEAD
 .column {
     float: left;
     width: 50%;
@@ -59,7 +60,7 @@ body {
 }
 .margin-top {
     margin-top: 1rem;
-}
+=======
 
 .fontIndex{
     font-family: 'Comic Neue', cursive;
@@ -81,4 +82,5 @@ body {
 
 #bodyHomeCliente{
     padding-top: 20px;
+>>>>>>> 5be561ec71fe7879c2d3c540a8987f9c8513de5a
 }
