@@ -29,7 +29,7 @@ class PromocoesController extends Controller
     {
         $promocoes = new Promocao();
         $promocoes->nome = $request->input('nome');
-        $promocoes->valor = $request->input('descricao');
+        $promocoes->valor = $request->input('valor');
         $promocoes->promoCode = $request->input('codigo');
         $promocoes->save();
         return redirect('admin/promocoes')->with( 'Promoção criada com sucesso');
