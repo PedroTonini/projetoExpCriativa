@@ -34,6 +34,7 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
     Route::get('promocoes/edit/{id}', 'PromocoesController@edit');
     Route::post('promocoes/edit/{id}', 'PromocoesController@update');
     Route::delete('promocoes/{id}', 'PromocoesController@destroy');
+    Route::resource('/funcionarios', 'FuncionariosController');
 });
 
 

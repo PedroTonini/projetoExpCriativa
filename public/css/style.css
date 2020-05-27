@@ -44,3 +44,19 @@ body {
 .divPositiva {
     float: right;
 }
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.margin-left {
+    margin-left: 1rem;
+}
+.margin-top {
+    margin-top: 1rem;
+}

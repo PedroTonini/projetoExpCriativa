@@ -17,7 +17,7 @@ class CreateFuncionariosTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('cargo_id')->unsigned()->nullable();
-            $table->date('dataAdmicao');
+            $table->date('dataAdmissao');
             $table->integer('ferias')->default('30');
             $table->timestamps();
 
