@@ -9,7 +9,7 @@ use App\Models\AvaliacaoDeCompra;
 class SiteController extends Controller
 {
     public function index(){
-        return view('cliente.avaliar');
+        return view('index');
     }
 
     public function avaliacaoCliente(){
@@ -27,4 +27,7 @@ class SiteController extends Controller
         return view('cliente.obrigado');
     }
 
+    public function homeCliente(){
+        return view('cliente.home');
+    }
 }

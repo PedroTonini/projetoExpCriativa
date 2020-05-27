@@ -44,3 +44,25 @@ body {
 .divPositiva {
     float: right;
 }
+
+.fontIndex{
+    font-family: 'Comic Neue', cursive;
+}
+
+#btnCliente{
+    background-color:#f8035e;
+    color: black;
+    border-color: transparent;
+}
+
+#boxIndex{    
+    border-radius: 25px;
+}
+
+#containerIndex{
+    background-color: #f8035d86;
+}
+
+#bodyHomeCliente{
+    padding-top: 20px;
+}

@@ -17,9 +17,10 @@ class CreateClientePromocaosTable extends Migration
             $table->bigInteger('cliente_id')->unsigned();
             $table->bigInteger('promocao_id')->unsigned();
             $table->timestamps();
+            $table->tinyInteger('status')->default('0');            
 
             $table->foreign('cliente_id')->references('id')->on('clientes');
-            $table->foreign('promocao_id')->references('id')->on('promocaos');
+            $table->foreign('promocao_id')->references('id')->on('promocaos');            
         });
     }
 
