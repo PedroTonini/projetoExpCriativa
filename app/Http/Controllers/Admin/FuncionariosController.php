@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Funcionario;
 use App\Models\Cargo;
@@ -50,8 +51,19 @@ class FuncionariosController extends Controller
      */
     public function store(Request $request)
     {
+        // Procura se cadastro de usuário já existe
+        $user = User::withTrashed()->where('cpf', $request->cpf)->first();
+
         // Criando registro de usuário
         $novoUser = new User();
+        if($user != null) {
+           $novoUser = $user;
+           $novoUser->deleted_at = null;
+           $novoFuncionario = Funcionario::withTrashed()->where('user_id', $user->id)->first();
+        //    dd($novoFuncionario);
+           $novoFuncionario->deleted_at = null;
+        }
+
         $novoUser->name = $request->nome;
         $novoUser->email = $request->email;
         $novoUser->password = bcrypt($request->password);
@@ -62,7 +74,9 @@ class FuncionariosController extends Controller
         $novoUser->save();
         
         // Criando registro de funcionário
-        $novoFuncionario = new Funcionario();
+        if (!isset($novoFuncionario)) {
+            $novoFuncionario = new Funcionario();
+        }
         $novoFuncionario->user_id = User::where('cpf', '=', $novoUser->cpf)->first()->id;
         $novoFuncionario->cargo_id = $request->cargo;
         $novoFuncionario->dataAdmissao = Carbon::now()->format('Y-m-d');
@@ -136,7 +150,7 @@ class FuncionariosController extends Controller
         $func->dataAdmissao = $request->dataAdmissao;
         $func->save();
 
-        return url()->previous();
+        return $this->index();
     }
 
     /**
@@ -147,6 +161,9 @@ class FuncionariosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user_id = Funcionario::find($id)->user_id;
+        Funcionario::where('id', $id)->delete();
+        User::where('id', $user_id)->delete();
+        return $this->index();
     }
 }

@@ -20,6 +20,7 @@ class CreateFuncionariosTable extends Migration
             $table->date('dataAdmissao');
             $table->integer('ferias')->default('30');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('cargo_id')->references('id')->on('cargos');

@@ -11,7 +11,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                <a href="{{ url()->previous() }}" class="btn btn-dark">Voltar</a>
+                <a href="{{ URL::to('admin/funcionarios') }}" class="btn btn-dark">Voltar</a>
                 <br /><br />
                     <table class="table table-striped">
                         <tr>

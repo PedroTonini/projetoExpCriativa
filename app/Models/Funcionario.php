@@ -3,13 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Funcionario extends Model
 {
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
+
     public static function getFuncionarios() {
-        return DB::table('funcionarios')
-                            ->join('users', 'funcionarios.user_id', '=', 'users.id')
+        return Funcionario::join('users', 'funcionarios.user_id', '=', 'users.id')
                             ->rightJoin('cargos', 'funcionarios.cargo_id', '=', 'cargos.id')
                             ->select('funcionarios.*', 'users.name', 'users.email', 'users.cpf',
                              'users.dataNascimento', 'users.telefone', 'cargos.nome AS cargo', 'cargos.salario')

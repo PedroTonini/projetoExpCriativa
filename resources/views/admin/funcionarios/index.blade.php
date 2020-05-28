@@ -11,7 +11,7 @@
         <div class="box">
             <br>
           <div>
-              <a href="funcionarios/create" class="btn btn-success">Registrar funcionário</a>
+              <a href="{{ URL::to('/admin/funcionarios/create') }}" class="btn btn-success">Registrar funcionário</a>
           </div>
           <br>
           <div class="table-scrollable">
@@ -29,11 +29,16 @@
                             <td>{{ $func->id }}</td>
                             <td>{{ $func->name }}</td>
                             <td>{{ $func->cargo }}</td>
-                            <td>{{ $func->telefone}} </td>
+                            <td>{{ $func->telefone}}</td>
                             <td>
-                                <a href="{{ $func->id }}" class="btn btn-outline-primary">Detalhes</a>
-                                <a href="{{ $func->id }}/edit" class="btn btn-primary">Editar</a>
-                                <a href="" class="btn btn-danger">Excluir</a>
+                                
+                                <form action="{{ URL::to('/admin/funcionarios/'.$func->id) }}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <a href="{{ URL::to('/admin/funcionarios/'.$func->id) }}" class="btn btn-outline-primary">Detalhes</a>
+                                    <a href="{{ URL::to('/admin/funcionarios/'.$func->id.'/edit') }}" class="btn btn-primary">Editar</a>
+                                    <button type="submit" class="btn btn-danger">Excluir</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
