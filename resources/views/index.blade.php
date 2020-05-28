@@ -9,15 +9,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Home </title>
 </head>
-<body class="backContainer">
-    <div class="container" >
+<body>
+<div class="container backContainer">
         <div class="box" align="center" id="boxIndex">
             <h1 class="fontIndex"> Rosa Chock </h1>
             <br>
             <br>
             <h5> Gostaria de seguir como: </h5>            
-            <a class="btn btn-primary btn-lg active" id="btnCliente" href="{{ URL::to('cliente/home') }}"> Cliente </a> {{-- corrigir href--}}
-            <a class="btn btn-default btn-lg active" id="btnFuncionario"> Funcionário </a> {{-- need to add href--}}
+            <a class="btnCliente" href="{{ URL::to('cliente/home') }}"> Cliente </a> {{-- corrigir href--}}
+            <a class="btnCliente" id="btnFuncionario"> Funcionário </a> {{-- need to add href--}}
         </div>
     </div>
     

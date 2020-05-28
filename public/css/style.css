@@ -65,14 +65,90 @@ body {
     font-family: 'Comic Neue', cursive;
 }
 
-#btnCliente{
-    background-color:#f8035e;
-    color: black;
-    border-color: transparent;
+.btnCliente{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: none;
+    color: #f8035e;
+    width: 240px;
+    height: 80px;
+    border: 1px solid #f8035e;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: .6s;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnCliente:focus{
+    outline:none;
+}
+
+.btnCliente:before{
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255,255,255,.5);
+    width: 60px;
+    height: 100px;
+    left: 0;
+    top: 0;
+    opacity: .5s;
+    filter: blur(30px);
+    transform: translateX(-130px) skewX(-15deg);
+}
+
+.btnCliente:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255,255,255,.2);
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter: blur(30px);
+    transform: translate(-100px) scaleX(-15deg);
+}
+
+.btnCliente:hover{
+    background: #f8035e;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+.btnCliente:hover:before {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: .6;
+    transition: .7s;
+}
+
+.btnCliente:hover:after {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 1;
+    transition: .7s;
+}
+
+#btnFuncionario{
+    top: 60%;
+    width: 180px;
+    height: 50px;
+    font-size: 12px;
 }
 
 #boxIndex{    
     border-radius: 25px;
+    width: 400px;
+    height: 380px;
+
 }
 
 #containerIndex{
@@ -85,7 +161,7 @@ body {
 
 .backContainer{
     /* background-color:#f8035d23; */       
-    background-image: url("/public/img/pngtree-light-pink-empty-wooden-texture-background-image_310066.jpg");
+    background-image: url('../img/pngtree-light-pink-empty-wooden-texture-background-image_310066.jpg');
     background-size: 100%;
 }
 
