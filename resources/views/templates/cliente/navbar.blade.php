@@ -14,11 +14,11 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li><a href="#"> Compras </a></li>
-              <li><a href="#"> Promoções </a></li>
+              <li><a href="{{ URL::to('cliente/home') }}"> Compras </a></li>
+              <li><a href="{{ URL::to('cliente/promocoes') }}"> Promoções </a></li>
             </ul>                
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Sair</a></li>            
+              <li><a href="{{ URL::to('index') }}">Sair</a></li>            
             </ul>
           </div>
     </div>

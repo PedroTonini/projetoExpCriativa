@@ -40,4 +40,6 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
 
 Route::post('avaliacao/save', 'SiteController@avaliacaoCliente')->name('avaliacao.create');
 
-Route::get('/cliente/home', 'Cliente\ClienteController@index')->name('cliente.home');
+Route::get('/cliente/home', 'Cliente\ClienteController@home')->name('cliente.home');
+Route::get('/cliente/promocoes', 'Cliente\ClienteController@promocoes')->name('cliente.promocoes');
+Route::get('/index', 'Cliente\ClienteController@index')->name('cliente.promocoes');

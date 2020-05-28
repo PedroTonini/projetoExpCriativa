@@ -76,9 +76,25 @@ body {
 }
 
 #containerIndex{
-    background-color: #f8035d86;
+    background-color: #f8035d23;
 }
 
 #bodyHomeCliente{
     padding-top: 20px;
+}
+
+.backContainer{
+    /* background-color:#f8035d23; */       
+    background-image: url("/public/img/pngtree-light-pink-empty-wooden-texture-background-image_310066.jpg");
+    background-size: 100%;
+}
+
+.divBoxCliente{
+    border-radius: 20px;
+}
+
+#tableCompraCliente{
+    /* border:none; */
+    margin-top: 1rem;
+    padding: none;
 }

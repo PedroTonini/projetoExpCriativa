@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Home </title>
 </head>
-<body>
-    <div class="container" id="containerIndex">
+<body class="backContainer">
+    <div class="container" >
         <div class="box" align="center" id="boxIndex">
             <h1 class="fontIndex"> Rosa Chock </h1>
             <br>
