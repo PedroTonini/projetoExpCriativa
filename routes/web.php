@@ -26,7 +26,7 @@ Route::auth();
 // })->name('admin-avaliacoes')->middleware('auth');
 
 
-Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'admin'], function(){
+Route::group(['middleware' => ['auth', 'role:admin'], 'namespace' => 'Admin', 'prefix' => 'admin'], function(){
     Route::get('/', 'AdminController@index')->name('admin.index');
     Route::resource('avaliacoes/individual', 'AvaliacoesController');
     Route::get('avaliacoes/dashboard', 'AvaliacoesController@dashboard');

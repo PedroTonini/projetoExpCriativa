@@ -21,7 +21,7 @@
                     <th width="35%">Nome</th>
                     <th width="20%">Cargo</th>
                     <th width="15%">Telefone</th>
-                    <th width="25%">Ações</th>
+                    <th width="20%">Ações</th>
                 </thead>
                 <tbody>
                     @foreach ($funcionarios as $func)
@@ -35,9 +35,9 @@
                                 <form action="{{ URL::to('/admin/funcionarios/'.$func->id) }}" method="POST">
                                     @method('DELETE')
                                     @csrf
-                                    <a href="{{ URL::to('/admin/funcionarios/'.$func->id) }}" class="btn btn-outline-primary">Detalhes</a>
-                                    <a href="{{ URL::to('/admin/funcionarios/'.$func->id.'/edit') }}" class="btn btn-primary">Editar</a>
-                                    <button type="submit" class="btn btn-danger">Excluir</button>
+                                    <a href="{{ URL::to('/admin/funcionarios/'.$func->id) }}" class="btn btn-sm btn-outline-primary">Detalhes</a>
+                                    <a href="{{ URL::to('/admin/funcionarios/'.$func->id.'/edit') }}" class="btn btn-sm btn-primary">Editar</a>
+                                    <button type="submit" class="btn btn-sm btn-danger" onsubmit="if (!confirm('Deseja realmente excluir essa promoção? Lembrando que o cliente que tiver essa promoção, ainda poderá utilizá-la.')) return false;">Excluir</button>
                                 </form>
                             </td>
                         </tr>

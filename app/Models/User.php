@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use jeremykenedy\LaravelRoles\Traits\HasRoleAndPermission;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -11,9 +12,9 @@ class User extends Authenticatable
 {
     use SoftDeletes;
     protected $dates = ['deleted_at'];
-
     use Notifiable;
-
+    use HasRoleAndPermission;
+    
     /**
      * The attributes that are mass assignable.
      *

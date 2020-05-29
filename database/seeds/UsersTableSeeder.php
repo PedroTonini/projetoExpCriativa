@@ -20,24 +20,24 @@ class UsersTableSeeder extends Seeder
             'dataNascimento' => '0000-01-01',
             'telefone' => '00000000000',
             'tipo' => '3'
-        ]);
+        ])->attachRole(1);
         User::create([
             'name' => 'Heloise Esther Marcela Monteiro',
-            'email' => 'heloisemonteiro@cbsaperfeicoamento.com',
+            'email' => 'heloisemonteiro@avaliasys.com',
             'password' => bcrypt('123'),
             'CPF' => '64207009493',
             'dataNascimento' => '1944-05-17',
             'telefone' => '67983821663',
             'tipo' => '1'
-        ]);
+        ])->attachRole(2);
         User::create([
             'name' => 'Marcelo Lara',
-            'email' => 'marcelolara@avaliasys.com',
+            'email' => 'marcelolara@cbsaperfeicoamento.com',
             'password' => bcrypt('123'),
             'CPF' => '46729986220',
             'dataNascimento' => '1991-01-04',
             'telefone' => '83994415257',
             'tipo' => '2'
-        ]);
+        ])->attachRole(3);
     }
 }

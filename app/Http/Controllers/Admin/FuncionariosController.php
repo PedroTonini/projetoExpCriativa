@@ -72,12 +72,14 @@ class FuncionariosController extends Controller
         $novoUser->telefone = $request->telefone;
         $novoUser->tipo = 2;
         $novoUser->save();
+        $user = User::where('cpf', '=', $novoUser->cpf)->first();
+        $user->attachRole(2);
         
         // Criando registro de funcionário
         if (!isset($novoFuncionario)) {
             $novoFuncionario = new Funcionario();
         }
-        $novoFuncionario->user_id = User::where('cpf', '=', $novoUser->cpf)->first()->id;
+        $novoFuncionario->user_id = $user->id;
         $novoFuncionario->cargo_id = $request->cargo;
         $novoFuncionario->dataAdmissao = Carbon::now()->format('Y-m-d');
         $novoFuncionario->save();
