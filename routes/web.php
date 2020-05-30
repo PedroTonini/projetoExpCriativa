@@ -14,6 +14,8 @@
 use App\Http\Controllers\SiteController;
 
 Route::get('/', 'SiteController@index');
+Route::get('cliente/cadastro', 'Cliente\ClienteController@cadastro');
+Route::post('cliente/cadastro', 'Cliente\ClienteController@store');
 
 //rota admin
 
@@ -44,10 +46,7 @@ Route::group(['middleware' => ['auth', 'role:cliente'], 'namespace' => 'Cliente'
     Route::post('avaliacao/save', 'SiteController@avaliacaoCliente')->name('avaliacao.create');
 });
 
-// Colocar no grupo após implementado login e cadastro do cliente (remover cliente do url esperado, pois o grupo ja tem prefix)
-    
 
-//
 Route::get('/index', 'Cliente\ClienteController@index')->name('cliente.promocoes');
 
 Route::group(['middleware' => ['auth', 'role:funcionario'], 'namespace' => 'Funcionario', 'prefix' => 'funcionario'], function(){

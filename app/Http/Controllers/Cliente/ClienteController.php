@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Cliente;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Compra;
+use App\Models\User;
 
 class ClienteController extends Controller
 {
@@ -22,5 +23,33 @@ class ClienteController extends Controller
 
     public function index(){
         return view('index');
+    }
+
+    public function cadastro() {
+        return view('cliente.cadastrar');
+    }
+
+    public function store(Request $request) {
+         // Procura se cadastro de usuário já existe
+         $user = User::withTrashed()->where('cpf', $request->cpf)->first();
+
+         // Criando registro de usuário
+        $novoUser = new User();
+        if($user != null) {
+           $novoUser = $user;
+           $novoUser->deleted_at = null;
+        }
+
+        $novoUser->name = $request->name;
+        $novoUser->email = $request->email;
+        $novoUser->password = bcrypt($request->password);
+        $novoUser->cpf = $request->cpf;
+        $novoUser->dataNascimento = $request->dataNascimento;
+        $novoUser->telefone = $request->telefone;
+        $novoUser->save();
+        $user = User::where('cpf', '=', $novoUser->cpf)->first();
+        $user->attachRole(3);
+
+        return redirect('cliente/home');
     }
 }

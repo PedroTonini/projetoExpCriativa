@@ -70,7 +70,6 @@ class FuncionariosController extends Controller
         $novoUser->cpf = $request->cpf;
         $novoUser->dataNascimento = $request->dataNascimento;
         $novoUser->telefone = $request->telefone;
-        $novoUser->tipo = 2;
         $novoUser->save();
         $user = User::where('cpf', '=', $novoUser->cpf)->first();
         $user->attachRole(2);

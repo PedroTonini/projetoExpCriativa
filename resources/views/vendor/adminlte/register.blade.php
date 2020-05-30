@@ -29,7 +29,7 @@
         <div class="card">
             <div class="card-body register-card-body">
                 <p class="login-box-msg">{{ __('adminlte::adminlte.register_message') }}</p>
-                <form action="{{ $register_url }}" method="post">
+                <form action="{{ URL::to('cliente/cadastro') }}" method="post">
                     {{ csrf_field() }}
 
                     <div class="input-group mb-3">
@@ -47,6 +47,52 @@
                             </div>
                         @endif
                     </div>
+                    {{-- CUMSTOM --}}
+                    <div class="input-group mb-3">
+                        <input type="date" name="dataNascimento" class="form-control {{ $errors->has('dataNascimento') ? 'is-invalid' : '' }}" value="{{ old('dataNascimento') }}" autofocus>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-calendar"></span>
+                            </div>
+                        </div>
+
+                        @if ($errors->has('dataNascimento'))
+                            <div class="invalid-feedback">
+                                <strong>{{ $errors->first('dataNascimento') }}</strong>
+                            </div>
+                        @endif
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" name="telefone" class="form-control {{ $errors->has('telefone') ? 'is-invalid' : '' }}" value="{{ old('telefone') }}"
+                               placeholder="Telefone (e.g. 41 98484-4848)" autofocus>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-phone"></span>
+                            </div>
+                        </div>
+
+                        @if ($errors->has('cpf'))
+                            <div class="invalid-feedback">
+                                <strong>{{ $errors->first('cpf') }}</strong>
+                            </div>
+                        @endif
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" name="cpf" class="form-control {{ $errors->has('cpf') ? 'is-invalid' : '' }}" value="{{ old('cpf') }}"
+                               placeholder="CPF" autofocus>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-id-card"></span>
+                            </div>
+                        </div>
+
+                        @if ($errors->has('name'))
+                            <div class="invalid-feedback">
+                                <strong>{{ $errors->first('name') }}</strong>
+                            </div>
+                        @endif
+                    </div>
+                    {{--  --}}
                     <div class="input-group mb-3">
                         <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}"
                                placeholder="{{ __('adminlte::adminlte.email') }}">

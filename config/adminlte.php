@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Admin AvaliaSys',
+    'title' => 'AvaliaSys',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -173,7 +173,7 @@ return [
 
     'login_url' => 'login',
 
-    'register_url' => 'register',
+    'register_url' => 'cliente/cadastro',
 
     'password_reset_url' => 'password/reset',
 
