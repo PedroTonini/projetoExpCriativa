@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">
+                            <button type="submit" class="btn btn-rosaChock btn-block btn-flat">
                                 {{ __('adminlte::adminlte.sign_in') }}
                             </button>
                         </div>
@@ -80,7 +80,7 @@
                 </form>
                 @if ($password_reset_url)
                     <p class="mt-2 mb-1">
-                        <a href="{{ $password_reset_url }}">
+                        <a href="{{ $password_reset_url }}" class="txt-rosaChock">
                             {{ __('adminlte::adminlte.i_forgot_my_password') }}
                         </a>
                     </p>
@@ -88,7 +88,7 @@
                 
                 @if ($register_url)
                     <p class="mb-0">
-                        <a href="{{ $register_url }}">
+                        <a href="{{ $register_url }}" class="txt-rosaChock">
                             {{ __('adminlte::adminlte.register_a_new_membership') }}
                         </a>
                     </p>
