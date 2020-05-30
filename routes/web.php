@@ -38,8 +38,18 @@ Route::group(['middleware' => ['auth', 'role:admin'], 'namespace' => 'Admin', 'p
 });
 
 
-Route::post('avaliacao/save', 'SiteController@avaliacaoCliente')->name('avaliacao.create');
+Route::group(['middleware' => ['auth', 'role:cliente'], 'namespace' => 'Cliente', 'prefix' => 'cliente'], function(){
+    Route::get('home', 'ClienteController@home')->name('cliente.home');
+    Route::get('promocoes', 'ClienteController@promocoes')->name('cliente.promocoes');
+    Route::post('avaliacao/save', 'SiteController@avaliacaoCliente')->name('avaliacao.create');
+});
 
-Route::get('/cliente/home', 'Cliente\ClienteController@home')->name('cliente.home');
-Route::get('/cliente/promocoes', 'Cliente\ClienteController@promocoes')->name('cliente.promocoes');
+// Colocar no grupo após implementado login e cadastro do cliente (remover cliente do url esperado, pois o grupo ja tem prefix)
+    
+
+//
 Route::get('/index', 'Cliente\ClienteController@index')->name('cliente.promocoes');
+
+Route::group(['middleware' => ['auth', 'role:funcionario'], 'namespace' => 'Funcionario', 'prefix' => 'funcionario'], function(){
+    Route::get('avaliacoes/minhasAvaliacoes', 'FuncionarioController@minhasAvaliacoes')->name('funcionario.minhasAvaliacoes');
+});

@@ -18,7 +18,12 @@
               <li><a href="{{ URL::to('cliente/promocoes') }}"> Promoções </a></li>
             </ul>                
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="{{ URL::to('index') }}">Sair</a></li>            
+              <li>
+                <form action="{{ URL::to( 'logout') }}" method="POST">
+                  @csrf
+                  <button class="a" type="submit"> Sair </button>
+                </form>
+              </li>            
             </ul>
           </div>
     </div>
