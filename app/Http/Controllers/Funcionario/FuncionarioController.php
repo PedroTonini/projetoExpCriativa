@@ -16,4 +16,8 @@ class FuncionarioController extends Controller
     public function minhasAvaliacoes(){
         return view('funcionario.avaliacoes.minhasAvaliacoes');
     }
+
+    public function avaliar(){
+        return view('funcionario.avaliacoes.avaliar');
+    }
 }

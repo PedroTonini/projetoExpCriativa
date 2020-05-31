@@ -43,6 +43,7 @@ Route::group(['middleware' => ['auth', 'role:admin'], 'namespace' => 'Admin', 'p
 Route::group(['middleware' => ['auth', 'role:cliente'], 'namespace' => 'Cliente', 'prefix' => 'cliente'], function(){
     Route::get('home', 'ClienteController@home')->name('cliente.home');
     Route::get('promocoes', 'ClienteController@promocoes')->name('cliente.promocoes');
+    Route::get('avaliar', 'ClienteController@avaliar')->name('cliente.avaliar');
     Route::post('avaliacao/save', 'SiteController@avaliacaoCliente')->name('avaliacao.create');
 });
 
@@ -52,4 +53,5 @@ Route::get('/index', 'Cliente\ClienteController@index')->name('cliente.promocoes
 Route::group(['middleware' => ['auth', 'role:funcionario'], 'namespace' => 'Funcionario', 'prefix' => 'funcionario'], function(){
     Route::get('/', 'FuncionarioController@index');
     Route::get('avaliacoes/minhasAvaliacoes', 'FuncionarioController@minhasAvaliacoes')->name('funcionario.minhasAvaliacoes');
+    Route::get('/avaliacoes/avaliar', 'FuncionarioController@avaliar')->name('funcionario.avaliar');
 });

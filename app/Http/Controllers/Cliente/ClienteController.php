@@ -52,4 +52,8 @@ class ClienteController extends Controller
 
         return redirect('cliente/home');
     }
+
+    public function avaliar(){
+        return view('cliente.avaliar');
+    }
 }

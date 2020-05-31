@@ -174,3 +174,33 @@ body {
     margin-top: 1rem;
     padding: none;
 }
+
+#boxAvaliarCliente{
+    width: 400px;
+    height: 525px;
+}
+
+.btn-rosaChock {
+    color: #ffffff;
+    background-color: #f8035e;
+    border-color: #f8035e;
+    box-shadow: none;
+  }
+  
+  .btn-rosaChock:hover {
+    color: #ffffff;
+    background-color: #d4024f;
+    border-color: #d4024f;
+  }
+
+  #btnSair{
+    background-color: transparent;
+    color: grey;
+    border: none;
+    padding-top: 1.5rem;
+    padding-right: 2rem;
+  }
+
+  #btnSair:hover{
+    color: white;
+  }

@@ -21,7 +21,7 @@
               <li>
                 <form action="{{ URL::to( 'logout') }}" method="POST">
                   @csrf
-                  <button class="a" type="submit"> Sair </button>
+                  <button id="btnSair" type="submit"> Sair </button>
                 </form>
               </li>            
             </ul>

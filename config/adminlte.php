@@ -255,6 +255,24 @@ return [
             'role' => 'admin',
         ],
 
+        [
+            'text' => 'Avaliações',            
+            'icon' => 'fas fa-star', 
+            'role' => 'funcionario',
+            'submenu' => [
+                [
+                    'text' => 'Minhas Avaliações',
+                    'url'  => 'funcionario/avaliacoes/minhasAvaliacoes',
+                    'icon' => 'fas fa-user-tie',
+                ],
+                [
+                    'text' => 'Avaliar',
+                    'url'  => 'funcionario/avaliacoes/avaliar',
+                    'icon' => 'far fa-star',
+                ],
+            ],
+        ],
+
         // [
         //     'text' => 'search',
         //     'search' => true,

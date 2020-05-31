@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="stylesheet" href="{{URL::asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     <link rel="stylesheet" href="{{URL::asset('css/style.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{URL::asset('css/bootstrap.css')}}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Avalie-nos :) </title>
 </head>
 <body>
-    <div class="container">
-        <div class="box" align="center">
+    <div class="container backContainer">
+        <div class="box divBoxCliente" align="center" id="boxAvaliarCliente">
             <form action="{{route('avaliacao.create')}}" method="POST" id="formAvaliacao">
 
                 @csrf
@@ -78,7 +78,7 @@
                 <script src="{{ URL::asset('js/avaliacaocliente.js') }}"></script>
             
             </form>
-            <button type="button" class="btn btn-primary" id="btEnviar"> Enviar avaliação </button>
+            <button type="button" class="btn btn-rosaChock" id="btEnviar"> Enviar avaliação </button>
         </div>
     </div> 
 </body>
