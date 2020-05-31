@@ -50,5 +50,6 @@ Route::group(['middleware' => ['auth', 'role:cliente'], 'namespace' => 'Cliente'
 Route::get('/index', 'Cliente\ClienteController@index')->name('cliente.promocoes');
 
 Route::group(['middleware' => ['auth', 'role:funcionario'], 'namespace' => 'Funcionario', 'prefix' => 'funcionario'], function(){
+    Route::get('/', 'FuncionarioController@index');
     Route::get('avaliacoes/minhasAvaliacoes', 'FuncionarioController@minhasAvaliacoes')->name('funcionario.minhasAvaliacoes');
 });

@@ -7,8 +7,12 @@ use Illuminate\Http\Request;
 use App\Models\Avaliacao_Func;
 use App\Models\Funcionario;
 
-class FuncinarioController extends Controller
+class FuncionarioController extends Controller
 {
+    public function index() {
+    return view('funcionario.index');
+    }
+
     public function minhasAvaliacoes(){
         return view('funcionario.avaliacoes.minhasAvaliacoes');
     }
