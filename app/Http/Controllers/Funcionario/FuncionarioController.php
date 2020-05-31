@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Avaliacao_Func;
 use App\Models\Funcionario;
 
-class FuncinarioController extends Controller
+class FuncionarioController extends Controller
 {
     public function minhasAvaliacoes(){
         return view('funcionario.avaliacoes.minhasAvaliacoes');
