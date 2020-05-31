@@ -33,7 +33,7 @@
                     {{ csrf_field() }}
 
                     <div class="input-group mb-3">
-                        <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name') }}"
+                        <input required autofocus type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name') }}"
                                placeholder="{{ __('adminlte::adminlte.full_name') }}" autofocus>
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -49,7 +49,7 @@
                     </div>
                     {{-- CUMSTOM --}}
                     <div class="input-group mb-3">
-                        <input type="date" name="dataNascimento" class="form-control {{ $errors->has('dataNascimento') ? 'is-invalid' : '' }}" value="{{ old('dataNascimento') }}" autofocus>
+                        <input required autofocus type="date" name="dataNascimento" class="form-control {{ $errors->has('dataNascimento') ? 'is-invalid' : '' }}" value="{{ old('dataNascimento') }}" autofocus>
                         
 
                         @if ($errors->has('dataNascimento'))
@@ -59,7 +59,7 @@
                         @endif
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" name="telefone" class="form-control {{ $errors->has('telefone') ? 'is-invalid' : '' }}" value="{{ old('telefone') }}"
+                        <input required autofocus type="text" name="telefone" class="form-control {{ $errors->has('telefone') ? 'is-invalid' : '' }}" value="{{ old('telefone') }}"
                                placeholder="Telefone (e.g. 41 98484-4848)" autofocus>
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -74,7 +74,7 @@
                         @endif
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" name="cpf" class="form-control {{ $errors->has('cpf') ? 'is-invalid' : '' }}" value="{{ old('cpf') }}"
+                        <input required autofocus type="text" name="cpf" class="form-control {{ $errors->has('cpf') ? 'is-invalid' : '' }}" value="{{ old('cpf') }}"
                                placeholder="CPF" autofocus>
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -90,7 +90,7 @@
                     </div>
                     {{--  --}}
                     <div class="input-group mb-3">
-                        <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}"
+                        <input required autofocus type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}"
                                placeholder="{{ __('adminlte::adminlte.email') }}">
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -104,7 +104,7 @@
                         @endif
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" name="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
+                        <input required autofocus type="password" name="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
                                placeholder="{{ __('adminlte::adminlte.password') }}">
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -118,7 +118,7 @@
                         @endif
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" name="password_confirmation" class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
+                        <input required autofocus type="password" name="password_confirmation" class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
                                placeholder="{{ __('adminlte::adminlte.retype_password') }}">
                         <div class="input-group-append">
                             <div class="input-group-text">

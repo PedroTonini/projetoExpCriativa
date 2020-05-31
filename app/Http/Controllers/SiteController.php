@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 use App\Models\Promocao;
 use App\Models\AvaliacaoDeCompra;
@@ -10,7 +10,6 @@ use App\Models\AvaliacaoDeCompra;
 class SiteController extends Controller
 {
     public function index(){
-        Auth::logout();
         return view('index');
     }
 

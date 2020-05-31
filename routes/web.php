@@ -13,23 +13,19 @@
 
 use App\Http\Controllers\SiteController;
 
+//Rotas que não necessitam de autenticação
 Route::get('/', 'SiteController@index');
 Route::get('cliente/cadastro', 'Cliente\ClienteController@cadastro');
 Route::post('cliente/cadastro', 'Cliente\ClienteController@store');
 
-//rota admin
+
 
 Route::auth();
-// Route::get('/admin', function() {
-//     return view('admin.index');
-// })->name('admin')->middleware('auth');
-// Route::get('/admin/avaliacoes', function() {
-//     return view('admin.avaliacoes.index');
-// })->name('admin-avaliacoes')->middleware('auth');
 
-
+// Rotas do admin
+Route::get('/admin', 'Admin\AdminController@auth');
 Route::group(['middleware' => ['auth', 'role:admin'], 'namespace' => 'Admin', 'prefix' => 'admin'], function(){
-    Route::get('/', 'AdminController@index')->name('admin.index');
+    Route::get('/home', 'AdminController@index')->name('admin.index');
     Route::resource('avaliacoes/individual', 'AvaliacoesController');
     Route::get('avaliacoes/dashboard', 'AvaliacoesController@dashboard');
     Route::resource('/promocoes', 'PromocoesController');
@@ -39,7 +35,8 @@ Route::group(['middleware' => ['auth', 'role:admin'], 'namespace' => 'Admin', 'p
     Route::resource('/funcionarios', 'FuncionariosController');
 });
 
-
+// Rotas do Cliente
+Route::get('/cliente', 'Cliente\ClienteController@auth');
 Route::group(['middleware' => ['auth', 'role:cliente'], 'namespace' => 'Cliente', 'prefix' => 'cliente'], function(){
     Route::get('home', 'ClienteController@home')->name('cliente.home');
     Route::get('promocoes', 'ClienteController@promocoes')->name('cliente.promocoes');
@@ -47,11 +44,10 @@ Route::group(['middleware' => ['auth', 'role:cliente'], 'namespace' => 'Cliente'
     Route::post('avaliacao/save', 'SiteController@avaliacaoCliente')->name('avaliacao.create');
 });
 
-
-Route::get('/index', 'Cliente\ClienteController@index')->name('cliente.promocoes');
-
+// Rotas do Funcionario
+Route::get('/funcionario', 'Funcionario\FuncionarioController@auth');
 Route::group(['middleware' => ['auth', 'role:funcionario'], 'namespace' => 'Funcionario', 'prefix' => 'funcionario'], function(){
-    Route::get('/', 'FuncionarioController@index');
+    Route::get('/home', 'FuncionarioController@index');
     Route::get('avaliacoes/minhasAvaliacoes', 'FuncionarioController@minhasAvaliacoes')->name('funcionario.minhasAvaliacoes');
     Route::get('/avaliacoes/avaliar', 'FuncionarioController@avaliar')->name('funcionario.avaliar');
 });

@@ -31,6 +31,7 @@ class AvaliacoesController extends Controller
 
     public function dashboard() 
     {
+        
         return view('admin.avaliacoes.dashboard');
     }
 }

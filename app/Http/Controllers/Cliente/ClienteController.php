@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Cliente;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Compra;
@@ -9,6 +10,13 @@ use App\Models\User;
 
 class ClienteController extends Controller
 {
+    public function auth() {
+        if ( !Auth::user()->hasRole('cliente') ) {
+            Auth::logout();
+        }
+        return redirect('/cliente/home');
+    }
+
     public function home(){
         $compras = Compra::where('CPFCliente', '=', 64207009493)->get();                
         $variables = [
