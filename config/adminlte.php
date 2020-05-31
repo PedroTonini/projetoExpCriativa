@@ -213,12 +213,14 @@ return [
             'text' => 'Promoções',
             'url'  => 'admin/promocoes',
             'icon' => 'fas fa-tags',
+            'role' => 'admin'
         ],
       
         [
             'text' => 'Avaliações',
             // 'url' => 'admin/metas',
             'icon' => 'far fa-star', 
+            'role' => 'admin',
             'submenu' => [
                             [
                                 'text' => 'Dashboard',
@@ -242,7 +244,8 @@ return [
         [
             'text' => 'Funcionários',
             'url'  => 'admin/funcionarios',
-            'icon' => 'fas fa-users'
+            'icon' => 'fas fa-users',
+            'role' => 'admin',
         ],
 
         // [
