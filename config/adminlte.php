@@ -248,6 +248,13 @@ return [
             'role' => 'admin',
         ],
 
+        [
+            'text' => 'Cargos',
+            'url'  => 'admin/cargos',
+            'icon' => 'fas fa-address-book',
+            'role' => 'admin',
+        ],
+
         // [
         //     'text' => 'search',
         //     'search' => true,
