@@ -17,7 +17,7 @@
             <br>
             <h5> Gostaria de seguir como: </h5>            
             <a class="btnCliente" href="{{ URL::to('cliente/home') }}"> Cliente </a> {{-- corrigir href--}}
-            <a class="btnCliente" id="btnFuncionario"> Funcionário </a> {{-- need to add href--}}
+            <a class="btnCliente" id="btnFuncionario" href="{{ URL::to('funcionario/avaliacoes/minhasAvaliacoes') }}"> Funcionário </a> {{-- need to add href--}}
         </div>
     </div>
     
