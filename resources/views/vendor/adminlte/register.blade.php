@@ -50,11 +50,7 @@
                     {{-- CUMSTOM --}}
                     <div class="input-group mb-3">
                         <input type="date" name="dataNascimento" class="form-control {{ $errors->has('dataNascimento') ? 'is-invalid' : '' }}" value="{{ old('dataNascimento') }}" autofocus>
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-calendar"></span>
-                            </div>
-                        </div>
+                        
 
                         @if ($errors->has('dataNascimento'))
                             <div class="invalid-feedback">
