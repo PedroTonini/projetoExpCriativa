@@ -49,9 +49,8 @@
                     </div>
                     {{-- CUMSTOM --}}
                     <div class="input-group mb-3">
-                        <input required autofocus type="date" name="dataNascimento" class="form-control {{ $errors->has('dataNascimento') ? 'is-invalid' : '' }}" value="{{ old('dataNascimento') }}" autofocus>
-                        
-
+                        <c class="input-group">Data de Nascimento:</c>  
+                        <input required autofocus type="date" value="teste" name="dataNascimento" class="form-control {{ $errors->has('dataNascimento') ? 'is-invalid' : '' }}" value="{{ old('dataNascimento') }}" autofocus>
                         @if ($errors->has('dataNascimento'))
                             <div class="invalid-feedback">
                                 <strong>{{ $errors->first('dataNascimento') }}</strong>
@@ -60,7 +59,7 @@
                     </div>
                     <div class="input-group mb-3">
                         <input required autofocus type="text" name="telefone" class="form-control {{ $errors->has('telefone') ? 'is-invalid' : '' }}" value="{{ old('telefone') }}"
-                               placeholder="Telefone (e.g. 41 98484-4848)" autofocus>
+                               placeholder="Telefone (e.g. 41 98484-4848)" minlength="10" maxlength="14" autofocus>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-phone"></span>
@@ -74,7 +73,7 @@
                         @endif
                     </div>
                     <div class="input-group mb-3">
-                        <input required autofocus type="text" name="cpf" class="form-control {{ $errors->has('cpf') ? 'is-invalid' : '' }}" value="{{ old('cpf') }}"
+                        <input required autofocus type="text" name="cpf" minlength="11" maxlength="11" class="form-control {{ $errors->has('cpf') ? 'is-invalid' : '' }}" value="{{ old('cpf') }}"
                                placeholder="CPF" autofocus>
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -104,7 +103,7 @@
                         @endif
                     </div>
                     <div class="input-group mb-3">
-                        <input required autofocus type="password" name="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
+                        <input required autofocus type="password" name="password" minlength="8" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
                                placeholder="{{ __('adminlte::adminlte.password') }}">
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -118,7 +117,7 @@
                         @endif
                     </div>
                     <div class="input-group mb-3">
-                        <input required autofocus type="password" name="password_confirmation" class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
+                        <input required autofocus type="password" name="password_confirmation" minlength="8" class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
                                placeholder="{{ __('adminlte::adminlte.retype_password') }}">
                         <div class="input-group-append">
                             <div class="input-group-text">

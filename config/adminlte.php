@@ -173,7 +173,7 @@ return [
 
     'login_url' => 'login',
 
-    'register_url' => 'cliente/cadastro',
+    'register_url' => 'register',
 
     'password_reset_url' => 'password/reset',
 

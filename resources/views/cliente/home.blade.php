@@ -29,10 +29,8 @@
                                 <td> R${{number_format($compra->valorTotal, '2', ',','.')}} </td>
                                 <td> {{$compra->created_at->format('d/m/Y')}} </td>
                                 <td>
-                                    <a href="{{ URL::to('cliente/avaliar') }}"> avaliar (temporario)</a>
-                                    {{-- @if ({{}})
-                                        
-                                    @endif --}}
+                                    <a href="{{ URL::to('cliente/avaliar'.$compra->id) }}"> avaliar (temporario)</a>
+                                    
                                 </td>
                             </tr>
                         @endforeach
