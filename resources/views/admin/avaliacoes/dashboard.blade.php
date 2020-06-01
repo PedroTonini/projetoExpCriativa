@@ -13,44 +13,54 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-
-<div id="atendimento">
-  <div class="col-lg-6 col-12 divNegativa">
-    <div class="small-box bg-danger">
-      <div class="inner">
-        <h3>44 ★-</h3>
-        <p>Ruins (atendimento)</p>
+<div class="row">
+  <div class="column">
+    <div align="center" id="atendimento">
+      <h3>Atendimento</h3>
+      <div class="col-lg-6 col-12 divNegativa">
+        <div class="small-box bg-danger">
+          <div class="inner">
+            <h3>{{ $avalAtendRuins}} ⮕ 2-★</h3>
+            <p>Ruins</p>
+          </div>
+        </div>
       </div>
-    </div>
+      <div class="col-lg-6 col-12 divPositiva">
+        <div class="small-box bg-success">
+          <div class="inner">
+            <h3>{{ $avalAtendBoas }} ⮕ 4+★</h3>
+            <p>Ótimas</p>
+          </div>
+        </div>
+      </div>
+    </div>    
   </div>
-  <div class="col-lg-6 col-12 divPositiva">
-    <div class="small-box bg-success">
-      <div class="inner">
-        <h3>10 4★+</h3>
-        <p>Ótimas (atendimento)</p>
+
+
+  <div class="column">
+    <div align="center" id="qualidade">
+      <h3>Produtos</h3>
+      <div class="col-lg-6 col-12 divNegativa">
+        <div class="small-box bg-danger">
+          <div class="inner">
+            <h3>{{ $avalProdRuins }} ⮕ 2-★</h3>
+            <p>Ruins</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-12 divPositiva">
+        <div class="small-box bg-success">
+          <div class="inner">
+            <h3>{{ $avalProdBoas }} ⮕ 4+★</h3>
+            <p>Ótimas </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div id="qualidade">
-  <div class="col-lg-6 col-12 divNegativa">
-    <div class="small-box bg-danger">
-      <div class="inner">
-        <h3>44 ★-</h3>
-        <p>Ruins (produtos)</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-6 col-12 divPositiva">
-    <div class="small-box bg-success">
-      <div class="inner">
-        <h3>10 4★+</h3>
-        <p>Ótimas (produtos)</p>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 
 <div id="myfirstchart" style="height: 250px;"></div>  

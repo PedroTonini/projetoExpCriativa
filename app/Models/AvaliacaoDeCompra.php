@@ -13,4 +13,19 @@ class AvaliacaoDeCompra extends Model
         $nome = User::find($user_id)->name;
         return $nome;
     }
+
+    public static function countAval() {
+        $avalProdBoas = AvaliacaoDeCompra::where('opiProduto', '>', '3')->count();
+        $avalProdRuins = AvaliacaoDeCompra::where('opiProduto', '<', '3')->count();
+        $avalAtendBoas = AvaliacaoDeCompra::where('opiAtendimento', '>', '3')->count();
+        $avalAtendRuins = AvaliacaoDeCompra::where('opiAtendimento', '<', '3')->count();
+
+        $data = [
+            'avalProdBoas'      => $avalProdBoas,
+            'avalProdRuins'     => $avalProdRuins,
+            'avalAtendBoas'     => $avalAtendBoas,
+            'avalAtendRuins'    => $avalAtendRuins
+        ];
+        return $data;
+    }
 }

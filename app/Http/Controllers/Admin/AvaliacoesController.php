@@ -31,7 +31,8 @@ class AvaliacoesController extends Controller
 
     public function dashboard() 
     {
+        $data = AvaliacaoDeCompra::countAval();
         
-        return view('admin.avaliacoes.dashboard');
+        return view('admin.avaliacoes.dashboard')->with($data);
     }
 }

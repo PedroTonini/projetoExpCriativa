@@ -11,7 +11,7 @@ use App\Models\Funcionario;
 class FuncionarioController extends Controller
 {
     public function auth() {
-        if ( !Auth::user()->hasRole('funcionario') ) {
+        if ( null !== Auth::user() &&  !Auth::user()->hasRole('funcionario') ) {
             Auth::logout();
         }
         return redirect('funcionario/home');

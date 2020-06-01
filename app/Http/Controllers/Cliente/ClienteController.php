@@ -11,7 +11,7 @@ use App\Models\User;
 class ClienteController extends Controller
 {
     public function auth() {
-        if ( !Auth::user()->hasRole('cliente') ) {
+        if ( null !== Auth::user() && !Auth::user()->hasRole('cliente') ) {
             Auth::logout();
         }
         return redirect('/cliente/home');
