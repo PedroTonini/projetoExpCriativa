@@ -19,12 +19,20 @@ class AvaliacaoDeCompra extends Model
         $avalProdRuins = AvaliacaoDeCompra::where('opiProduto', '<', '3')->count();
         $avalAtendBoas = AvaliacaoDeCompra::where('opiAtendimento', '>', '3')->count();
         $avalAtendRuins = AvaliacaoDeCompra::where('opiAtendimento', '<', '3')->count();
+        $avalPrecoBoas = AvaliacaoDeCompra::where('opiPreco', '>', '3')->count();
+        $avalPrecoRuins = AvaliacaoDeCompra::where('opiPreco', '<', '3')->count();
+        $avalMarcasBoas = AvaliacaoDeCompra::where('opiMarca', '>', '3')->count();
+        $avalMarcasRuins = AvaliacaoDeCompra::where('opiMarca', '<', '3')->count();
 
         $data = [
             'avalProdBoas'      => $avalProdBoas,
             'avalProdRuins'     => $avalProdRuins,
             'avalAtendBoas'     => $avalAtendBoas,
-            'avalAtendRuins'    => $avalAtendRuins
+            'avalAtendRuins'    => $avalAtendRuins,
+            'avalPrecoBoas'     => $avalPrecoBoas,
+            'avalPrecoRuins'    => $avalPrecoRuins,
+            'avalMarcasBoas'    => $avalMarcasBoas,
+            'avalMarcasRuins'   => $avalMarcasRuins
         ];
         return $data;
     }
