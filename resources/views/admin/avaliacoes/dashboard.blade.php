@@ -9,27 +9,34 @@
 @stop
 
 @section('content')
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+<div align="center">
+  <div class="small-box bg-primary col-6">
+    <h3><strong>Overview</strong></h3>
+    <h3>{{ number_format($avgAval, '1', '.', ',') }}★</h3>
+  </div>
+</div>
+
+
 <div class="row">
   <div class="column">
-    <div align="center" id="atendimento">
-      <h3>Atendimento</h3>
+    <div align="center" id="divAtend">
+      <h3><strong>Atendimento</strong> </h3>
       <div class="col-lg-6 col-12 divNegativa">
-        <div class="small-box bg-danger">
+        <div class="small-box bg-success">
           <div class="inner">
-            <h3>{{ $avalAtendRuins}} ⮕ 2-★</h3>
-            <p>Ruins</p>
+            <h5>Ótimas</h5>
+            <h3>{{ $avalAtendBoas }}</h3>
+            <h4>(4+★)</h4>
           </div>
         </div>
       </div>
       <div class="col-lg-6 col-12 divPositiva">
-        <div class="small-box bg-success">
+        <div class="small-box bg-danger">
           <div class="inner">
-            <h3>{{ $avalAtendBoas }} ⮕ 4+★</h3>
-            <p>Ótimas</p>
+            <h5>Ruins</h5>
+            <h3>{{ $avalAtendRuins}}</h3>
+            <h4>(2-★)</h4>
           </div>
         </div>
       </div>
@@ -38,21 +45,23 @@
 
 
   <div class="column">
-    <div align="center" id="qualidade">
-      <h3>Produtos</h3>
-      <div class="col-lg-6 col-12 divNegativa">
-        <div class="small-box bg-danger">
+    <div align="center" id="divProdutos">
+      <h3><strong>Produtos</strong></h3>
+      <div class="col-lg-6 col-12 divNegativa border-left border-secondary">
+        <div class="small-box bg-success">
           <div class="inner">
-            <h3>{{ $avalProdRuins }} ⮕ 2-★</h3>
-            <p>Ruins</p>
+            <h5>Ótimas</h5>
+            <h3>{{ $avalProdBoas }}</h3>
+            <h4>(4+★)</h4>
           </div>
         </div>
       </div>
-      <div class="col-lg-6 col-12 divPositiva">
-        <div class="small-box bg-success">
+      <div class="col-lg-6 col-12 divPositiva ">
+        <div class="small-box bg-danger">
           <div class="inner">
-            <h3>{{ $avalProdBoas }} ⮕ 4+★</h3>
-            <p>Ótimas </p>
+            <h5>Ruins</h5>
+            <h3>{{ $avalProdRuins }}</h3>
+            <h4>(2-★)</h4>
           </div>
         </div>
       </div>
@@ -61,32 +70,55 @@
 </div>
 
 
+<div class="row">
+  <div class="column">
+    <div align="center" id="divPreco">
+      <h3><strong>Preço</strong></h3>
+      <div class="col-lg-6 col-12 divNegativa">
+        <div class="small-box bg-success">
+          <div class="inner">
+            <h5>Ótimas</h5>
+            <h3>{{ $avalPrecoBoas }}</h3>
+            <h4>(4+★)</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-12 divPositiva">
+        <div class="small-box bg-danger">
+          <div class="inner">
+            <h5>Ruins</h5>
+            <h3>{{ $avalPrecoRuins}}</h3>
+            <h4>(2-★)</h4>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
 
 
-<div id="myfirstchart" style="height: 250px;"></div>  
-
-
-<script>
-    new Morris.Line({
-  // ID of the element in which to draw the chart.
-  element: 'myfirstchart',
-  // Chart data records -- each entry in this array corresponds to a point on
-  // the chart.
-  data: [
-    { year: '2008', value: 5 },
-    { year: '2009', value: 3 },
-    { year: '2010', value: 2 },
-    { year: '2011', value: 4 },
-    { year: '2012', value: 3 }
-  ],
-  // The name of the data record attribute that contains x-values.
-  xkey: 'year',
-  // A list of names of data record attributes that contain y-values.
-  ykeys: ['value'],
-  // Labels for the ykeys -- will be displayed when you hover over the
-  // chart.
-  labels: ['Value']
-});
-</script>
+  <div class="column">
+    <div align="center" id="divMarca">
+      <h3><strong>Marcas</strong></h3>
+      <div class="col-lg-6 col-12 divNegativa border-left border-secondary">
+        <div class="small-box bg-success">
+          <div class="inner">
+            <h5>Ótimas</h5>
+            <h3>{{ $avalMarcasBoas }}</h3>
+            <h4>(4+★)</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-12 divPositiva ">
+        <div class="small-box bg-danger">
+          <div class="inner">
+            <h5>Ruins</h5>
+            <h3>{{ $avalMarcasRuins }}</h3>
+            <h4>(2-★)</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 @stop
