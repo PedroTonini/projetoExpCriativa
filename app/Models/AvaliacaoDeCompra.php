@@ -24,6 +24,13 @@ class AvaliacaoDeCompra extends Model
         $avalMarcasBoas = AvaliacaoDeCompra::where('opiMarca', '>', '3')->count();
         $avalMarcasRuins = AvaliacaoDeCompra::where('opiMarca', '<', '3')->count();
 
+        // Calcula a média geral de avaliações de compra
+        $avgAval = AvaliacaoDeCompra::avg('opiAtendimento');
+        $avgAval += AvaliacaoDeCompra::avg('opiPreco');
+        $avgAval += AvaliacaoDeCompra::avg('opiMarca');
+        $avgAval += AvaliacaoDeCompra::avg('opiProduto');
+        $avgAval = $avgAval / 4;
+
         $data = [
             'avalProdBoas'      => $avalProdBoas,
             'avalProdRuins'     => $avalProdRuins,
@@ -32,7 +39,8 @@ class AvaliacaoDeCompra extends Model
             'avalPrecoBoas'     => $avalPrecoBoas,
             'avalPrecoRuins'    => $avalPrecoRuins,
             'avalMarcasBoas'    => $avalMarcasBoas,
-            'avalMarcasRuins'   => $avalMarcasRuins
+            'avalMarcasRuins'   => $avalMarcasRuins,
+            'avgAval'           => $avgAval
         ];
         return $data;
     }
