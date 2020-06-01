@@ -7,8 +7,8 @@
 @stop
 
 @section('content')
-    <div class="container">
-        <div class="box">
+    <div class="card">
+        <div class="card-body">
             <br>
           <div>
               <a href="{{ URL::to('/admin/funcionarios/create') }}" class="btn btn-success">Registrar funcionário</a>

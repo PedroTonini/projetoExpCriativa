@@ -7,8 +7,8 @@
 @stop
 
 @section('content')
-    <div class="container">
-        <div class="box">
+    <div class="card">
+        <div class="card-body">
             <div>
                 <a href="{{ URL::route('promocoes.create') }}" class="btn btn-success">Criar</a>
             </div>

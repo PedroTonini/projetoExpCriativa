@@ -9,8 +9,9 @@
 @stop
 
 @section('content')
- <div class="container">
-   <div class="box">
+
+ <div>
+   <div>
     <div align="center">
       <div class="small-box bg-primary col-6">
         <h3><strong>Overview</strong></h3>
@@ -121,8 +122,7 @@
         </div>
       </div>
     </div>
-   </div>
+  </div>
  </div>
-
 
 @stop

@@ -12,7 +12,8 @@
 @stop
 
 @section('content')
-    <div>
+    <div class="card">
+        <div class="card-body">
           <div class="margin-left">
             <form action="{{ URL::to('admin/funcionarios/'.$func->id) }}" method="POST">
                 @method('PUT')
@@ -71,7 +72,10 @@
                 </table>
             </form>
           </div>
+        </div>
     </div>
+
+
     <div id="passwordModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">

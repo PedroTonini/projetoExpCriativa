@@ -3,7 +3,9 @@
 @section('title', 'Cadastrar Cargos')
 
 @section('content')
-    <h1>Cadastrar novo cargo.</h1>
+<div class="card">
+    <div class="card-body">
+        <h1>Cadastrar novo cargo.</h1>
 
     <br>
     <br>
@@ -22,6 +24,9 @@
         <button class="form-control btn-primary" type="submit">Cadastrar</button>
         </div>
     </form>
+    </div>
+</div>
+    
     
 @endsection
     
