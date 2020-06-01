@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="table-scrollable">
-                        <form action="" id="formAvaliacaoFunc">
+                        <form action="{{route('avaliacaoFunc.create')}}" method="POST" id="formAvaliacaoFunc">
 
                             @csrf
 
@@ -34,7 +34,7 @@
 
                             <h4> Avalie-o: </h4>                           
 
-                            <textarea name="" id="" cols="60" rows="8" placeholder="&ensp;Feedback para seu colega de trabalho"></textarea>                       
+                            <textarea name="opiTexto" id="opiTexto" cols="60" rows="8" placeholder="&ensp;Feedback para seu colega de trabalho"></textarea>                       
 
                             <script src="{{ URL::asset('js/jquery-3.5.0.js') }}"></script>
                             <script src="{{ URL::asset('js/avaliacaoFuncionario.js') }}"></script>

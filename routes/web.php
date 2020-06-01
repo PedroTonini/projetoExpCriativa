@@ -50,4 +50,6 @@ Route::group(['middleware' => ['auth', 'role:funcionario'], 'namespace' => 'Func
     Route::get('/home', 'FuncionarioController@index');
     Route::get('avaliacoes/minhasAvaliacoes', 'FuncionarioController@minhasAvaliacoes')->name('funcionario.minhasAvaliacoes');
     Route::get('/avaliacoes/avaliar', 'FuncionarioController@avaliar')->name('funcionario.avaliar');
+    Route::get('/avaliacoes/pagAvaliacao', 'FuncionarioController@pagAvaliacao')->name('funcionario.pagAvaliacao');
+    Route::post('avaliacao/save', 'FuncionarioController@avaliacaoFuncionario')->name('avaliacaoFunc.create');
 });

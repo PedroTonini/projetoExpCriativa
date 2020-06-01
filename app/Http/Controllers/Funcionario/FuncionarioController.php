@@ -25,7 +25,28 @@ class FuncionarioController extends Controller
         return view('funcionario.avaliacoes.minhasAvaliacoes');
     }
 
-    public function avaliar(){
+    public function pagAvaliacao(){
         return view('funcionario.avaliacoes.avaliar');
+    }
+
+    public function avaliar()
+    {        
+        $funcionarios = Funcionario::getFuncionarios();
+        $variables = [
+            'funcionarios' => $funcionarios
+        ];
+        return view('funcionario.avaliacoes.funcionarioLista')->with($variables);
+    }
+
+    public function avaliacaoFuncionario(){
+        $avaliacao = new Avaliacao_Func();
+
+        $avaliacao->opiEntrosamento = request('opiEntrosamento');
+        $avaliacao->opiTexto = request('opiTexto');
+        $avaliacao->funcionario_id = request('funcionario_id');
+
+        $avaliacao->save();
+
+        return $this->avaliar();;
     }
 }

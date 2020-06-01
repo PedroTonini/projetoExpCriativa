@@ -13,7 +13,7 @@ class FuncionariosTableSeeder extends Seeder
     public function run()
     {
         Funcionario::create([
-            'user_id' => '3',
+            'user_id' => '2',
             'cargo_id' => '1',
             'dataAdmissao' => '2020-02-15'
         ]);
