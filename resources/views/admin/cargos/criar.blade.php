@@ -11,7 +11,7 @@
     <br>
     <br>
     
-    <form action="{{ URL::route('') }}" method="POST">
+    <form action="{{ URL::route('cargos.store') }}" method="POST">
     {!! csrf_field() !!}
         <div class="col-lg-6 col-12 container">
         
