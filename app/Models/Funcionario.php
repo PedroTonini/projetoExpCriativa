@@ -15,6 +15,7 @@ class Funcionario extends Model
                             ->rightJoin('cargos', 'funcionarios.cargo_id', '=', 'cargos.id')
                             ->select('funcionarios.*', 'users.name', 'users.email', 'users.cpf',
                              'users.dataNascimento', 'users.telefone', 'cargos.nome AS cargo', 'cargos.salario')
+                            ->whereNotNull('name')
                             ->get();
     }
 

@@ -28,9 +28,10 @@
                                         <td>{{ $row->id }}</td>
                                         <td>{{ $row->nome }}</td>
                                         <td>{{ $row->created_at }}</td>
-                                        <td><a href="{{ URL::to('admin/avaliacoes/individual/'.$row->id) }}" class="btn btn-sm btn-info">Detalhes</a></td>
+                                        <td><a href="{{ URL::to('admin/avaliacoes/individual/'.$row->id) }}" class="btn btn-sm btn-outline-primary">Detalhes</a></td>
                                     </tr>
                                 @endforeach
+                            </tbody>
                     </div>
                 </div>
             </div>
