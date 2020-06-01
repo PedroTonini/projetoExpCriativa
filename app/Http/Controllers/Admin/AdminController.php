@@ -14,7 +14,7 @@ class AdminController extends Controller
     }
 
     public function auth() {
-        if ( null !== Auth::user() && Auth::user()->hasRole('admin') ) {
+        if ( null !== Auth::user() && !Auth::user()->hasRole('admin') ) {
             Auth::logout();
         }
         return redirect('/admin/home');
