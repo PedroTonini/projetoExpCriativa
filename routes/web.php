@@ -33,6 +33,10 @@ Route::group(['middleware' => ['auth', 'role:admin'], 'namespace' => 'Admin', 'p
     Route::post('promocoes/edit/{id}', 'PromocoesController@update');
     Route::delete('promocoes/{id}', 'PromocoesController@destroy');
     Route::resource('/funcionarios', 'FuncionariosController');
+    Route::resource('/cargos', 'CargosController');
+    Route::get('cargos/edit/{id}', 'CargosController@edit');
+    Route::post('cargos/edit/{id}', 'CargosController@update');
+    Route::delete('cargos/{id}', 'CargosController@destroy');
 });
 
 // Rotas do Cliente
