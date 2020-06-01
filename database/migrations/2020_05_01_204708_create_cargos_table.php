@@ -18,6 +18,7 @@ class CreateCargosTable extends Migration
             $table->string('nome');
             $table->double('salario');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
