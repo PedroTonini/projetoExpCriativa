@@ -17,5 +17,15 @@ class FuncionariosTableSeeder extends Seeder
             'cargo_id' => '1',
             'dataAdmissao' => '2020-02-15'
         ]);
+        Funcionario::create([
+            'user_id' => '5',
+            'cargo_id' => '1',
+            'dataAdmissao' => '2020-03-24'
+        ]);
+        Funcionario::create([
+            'user_id' => '6',
+            'cargo_id' => '1',
+            'dataAdmissao' => '2020-03-10'
+        ]);
     }
 }
