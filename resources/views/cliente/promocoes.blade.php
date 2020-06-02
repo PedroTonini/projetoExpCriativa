@@ -18,22 +18,29 @@
                 <table class="table table-bordered table-hover" id="tableCompraCliente">
                     <thead>
                         <th width="10%"> # </th>
-                        <th width="30%"> Código </th>
+                        <th width="30%"> Nome </th>
                         <th width="25%"> Valor </th>
                         <th width="20%"> Validade </th>
-                        <th width="15%"> Status </th>
+                        <th width="15%"> Código </th>
                     </thead>
                     <tbody>
-                        {{-- @foreach ($collection as $item) --}}
+                        @foreach ($promocoes as $promo)
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $promo->id }}</td>
+                                <td>{{ $promo->nome }}</td>
+                                <td>{{ $promo->valor }}</td>
+                                <td>
+                                    @if ($promo->validade == null)
+                                        Sem Validade!
+                                    @else
+                                        {{ $promo->validade }}
+                                    @endif
+                                    
+                                </td>
+                                <td>{{ $promo->promoCode }}</td>
                             </tr>
 
-                        {{-- @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>

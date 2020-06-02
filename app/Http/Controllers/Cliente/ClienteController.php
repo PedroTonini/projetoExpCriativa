@@ -7,6 +7,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Compra;
 use App\Models\User;
+use App\Models\AvaliacaoDeCompra;
+use App\Models\Promocao;
+use App\Models\ClientePromocao;
+use Carbon\Carbon;
 
 class ClienteController extends Controller
 {
@@ -18,7 +22,7 @@ class ClienteController extends Controller
     }
 
     public function home(){
-        $compras = Compra::where('CPFCliente', '=', 64207009493)->get();                
+        $compras = Compra::getComprasCliente()->orderBy('id', 'DESC')->get();
         $variables = [
             'compras' => $compras
         ];
@@ -26,7 +30,21 @@ class ClienteController extends Controller
     }
 
     public function promocoes(){
-        return view('cliente.promocoes');
+        $userId = Auth::id();
+        $promocoes_id = ClientePromocao::where('user_id', $userId)->orderBy('created_at', 'DESC')->get('promocao_id');
+        $promocoes = [];
+        $currDate = Carbon::now()->format('Y-m-d H:i:s');
+        foreach ($promocoes_id as $promo_id) {
+            $promo = Promocao::where('id', $promo_id->promocao_id)->first();       
+            if ($promo->validade == null || $promo->where('validade', '>=', $currDate)){
+                array_push($promocoes, $promo);
+            } 
+        }
+
+        $variables = [
+            'promocoes'     => $promocoes
+        ];
+        return view('cliente.promocoes')->with($variables);
     }
 
     public function index(){
@@ -63,5 +81,27 @@ class ClienteController extends Controller
 
     public function avaliar(){
         return view('cliente.avaliar');
+    }
+
+    public function salvarAvaliacao($id) {
+        $userId = Auth::id();
+
+        // salvar avaliacao
+        $aval = new AvaliacaoDeCompra();
+        $aval->opiAtendimento = request('opiAtendimento');
+        $aval->opiPreco = request('opiPreco');
+        $aval->opiMarca = request('opiMarca');
+        $aval->opiProduto = request('opiProduto');
+        $aval->compra_id = $id;
+        $aval->user_id = $userId;
+        $aval->save();
+
+        // dar promoçao ao cliente
+        $promo = Promocao::inRandomOrder()->first()->id;
+        $relacionamento = new ClientePromocao();
+        $relacionamento->user_id = $userId;
+        $relacionamento->promocao_id = $promo;
+        $relacionamento->save();
+        return $this->promocoes();
     }
 }

@@ -204,3 +204,11 @@ body {
   #btnSair:hover{
     color: white;
   }
+
+  #bodyCliente {
+      margin-top: 20px;
+  }
+
+  #tableCompraCliente td {
+      height: 5rem;
+  }

@@ -13,7 +13,7 @@
 <body>
     <div class="container backContainer">
         <div class="box divBoxCliente" align="center" id="boxAvaliarCliente">
-            <form action="{{route('avaliacao.create')}}" method="POST" id="formAvaliacao">
+            <form action="{{URL::current()}}" method="POST" id="formAvaliacao">
 
                 @csrf
 
@@ -68,11 +68,6 @@
 
                 <br>
                 <br>
-
-                
-
-                <input type="hidden" name="compra_id" value="1">
-                <input type="hidden" name="cliente_id" value="1">
 
                 <script src="{{ URL::asset('js/jquery-3.5.0.js') }}"></script>
                 <script src="{{ URL::asset('js/avaliacaocliente.js') }}"></script>

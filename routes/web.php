@@ -44,7 +44,8 @@ Route::get('/cliente', 'Cliente\ClienteController@auth');
 Route::group(['middleware' => ['auth', 'role:cliente'], 'namespace' => 'Cliente', 'prefix' => 'cliente'], function(){
     Route::get('home', 'ClienteController@home')->name('cliente.home');
     Route::get('promocoes', 'ClienteController@promocoes')->name('cliente.promocoes');
-    Route::get('avaliar', 'ClienteController@avaliar')->name('cliente.avaliar');
+    Route::get('avaliar/{id}', 'ClienteController@avaliar');
+    Route::post('avaliar/{id}', 'ClienteController@salvarAvaliacao');
     Route::post('avaliacao/save', 'SiteController@avaliacaoCliente')->name('avaliacao.create');
 });
 

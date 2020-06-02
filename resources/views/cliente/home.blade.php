@@ -10,7 +10,7 @@
     <title> Compras </title>
 </head>
 @include('templates.cliente.navbar')
-<body>    
+<body id="bodyCliente">    
     <div class="container backContainer">                
         <div class="box divBoxCliente">
             <h1 class="fontIndex" align="center" > Rosa Chock </h1>
@@ -29,7 +29,12 @@
                                 <td> R${{number_format($compra->valorTotal, '2', ',','.')}} </td>
                                 <td> {{$compra->created_at->format('d/m/Y')}} </td>
                                 <td>
-                                    <a href="{{ URL::to('cliente/avaliar'.$compra->id) }}"> avaliar (temporario)</a>
+                                    @if ($compra->aval_id == null)
+                                        <a class="btn btn-sm btn-rosaChock" href="{{ URL::to('cliente/avaliar/'.$compra->id) }}"> avaliar</a>
+                                    @else
+                                        Avaliada!
+                                    @endif
+                                    
                                     
                                 </td>
                             </tr>

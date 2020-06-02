@@ -13,7 +13,7 @@ class Cliente_PromocaosTableSeeder extends Seeder
     public function run()
     {
         ClientePromocao::create([
-            'cliente_id' => '1',
+            'user_id' => '3',
             'promocao_id' => '1',
         ]);
     }

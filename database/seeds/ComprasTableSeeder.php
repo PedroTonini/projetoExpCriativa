@@ -14,8 +14,23 @@ class ComprasTableSeeder extends Seeder
     {
         Compra::create([
             'funcionario_id' => '1',
-            'CPFCliente' =>  '64207009493',
+            'CPFCliente' =>  '46729986220',
             'valorTotal' => '256.30'
+        ]);
+        Compra::create([
+            'funcionario_id' => '1',
+            'CPFCliente' =>  '46729986220',
+            'valorTotal' => '125.45'
+        ]);
+        Compra::create([
+            'funcionario_id' => '1',
+            'CPFCliente' =>  '46729986220',
+            'valorTotal' => '350.20'
+        ]);
+        Compra::create([
+            'funcionario_id' => '1',
+            'CPFCliente' =>  '46729986220',
+            'valorTotal' => '44.90'
         ]);
     }
 }

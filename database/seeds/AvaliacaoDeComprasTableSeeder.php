@@ -18,7 +18,7 @@ class AvaliacaoDeComprasTableSeeder extends Seeder
             'opiMarca' => '5',
             'opiProduto' => '5',
             'compra_id' => '1',
-            'cliente_id' => '1',
+            'user_id' => '3',
         ]);
     }
 }
