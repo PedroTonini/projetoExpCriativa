@@ -20,6 +20,8 @@ Route::post('cliente/cadastro', 'Cliente\ClienteController@store');
 
 
 
+
+
 Route::auth();
 
 // Rotas do admin

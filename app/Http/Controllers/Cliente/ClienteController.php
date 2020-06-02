@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Cliente;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Compra;
@@ -10,7 +11,9 @@ use App\Models\User;
 use App\Models\AvaliacaoDeCompra;
 use App\Models\Promocao;
 use App\Models\ClientePromocao;
+use App\Mail\PromocaoMail;
 use Carbon\Carbon;
+
 
 class ClienteController extends Controller
 {
@@ -94,14 +97,19 @@ class ClienteController extends Controller
         $aval->opiProduto = request('opiProduto');
         $aval->compra_id = $id;
         $aval->user_id = $userId;
-        $aval->save();
+        // $aval->save();
 
         // dar promoçao ao cliente
         $promo = Promocao::inRandomOrder()->first()->id;
         $relacionamento = new ClientePromocao();
         $relacionamento->user_id = $userId;
         $relacionamento->promocao_id = $promo;
-        $relacionamento->save();
-        return $this->promocoes();
+        // $relacionamento->save();
+
+        // Mandar email para o clinte alertando que recebeu a promocao
+        $userEmail = Auth::user()->email;
+
+        Mail::to($userEmail)->send(new PromocaoMail());
+        return redirect('cliente/promocoes');
     }
 }
