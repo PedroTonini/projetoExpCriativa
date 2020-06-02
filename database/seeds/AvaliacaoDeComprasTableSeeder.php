@@ -20,5 +20,21 @@ class AvaliacaoDeComprasTableSeeder extends Seeder
             'compra_id' => '1',
             'user_id' => '3',
         ]);
+        AvaliacaoDeCompra::create([
+            'opiAtendimento' => '5',
+            'opiPreco' => '5',
+            'opiMarca' => '5',
+            'opiProduto' => '5',
+            'compra_id' => '5',
+            'user_id' => '4',
+        ]);
+        AvaliacaoDeCompra::create([
+            'opiAtendimento' => '5',
+            'opiPreco' => '5',
+            'opiMarca' => '5',
+            'opiProduto' => '5',
+            'compra_id' => '6',
+            'user_id' => '4',
+        ]);
     }
 }

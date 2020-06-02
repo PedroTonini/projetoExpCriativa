@@ -36,5 +36,28 @@ class UsersTableSeeder extends Seeder
             'dataNascimento' => '1991-01-04',
             'telefone' => '83994415257',
         ])->attachRole(3);
+        User::create([
+            'name' => 'Maria Fernanda Oliveira',
+            'email' => 'mariaoliveira@email.com',
+            'password' => bcrypt('123'),
+            'CPF' => '12853415031',
+            'dataNascimento' => '1988-02-24',
+            'telefone' => '14997824257',
+        ])->attachRole(3);
+        User::create([
+            'name' => 'Daniela Arbex',
+            'email' => 'daniela@avaliasys.com',
+            'password' => bcrypt('123'),
+            'CPF' => '55575713024',
+            'dataNascimento' => '1980-10-22',
+            'telefone' => '17923904663',
+        ])->attachRole(2);User::create([
+            'name' => 'Maria Luiza Carriel',
+            'email' => 'marialuiza@avaliasys.com',
+            'password' => bcrypt('123'),
+            'CPF' => '56842330076',
+            'dataNascimento' => '1983-12-17',
+            'telefone' => '14983251678',
+        ])->attachRole(2);
     }
 }
