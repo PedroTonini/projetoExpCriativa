@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="table-scrollable">
-                        <form action="{{route('avaliacaoFunc.create')}}" method="POST" id="formAvaliacaoFunc">
+                        <form action="{{ URL::to('/funcionario/avaliacoes/pagAvaliacao/'.$func_id) }}" method="POST" id="formAvaliacaoFunc">
 
                             @csrf
 

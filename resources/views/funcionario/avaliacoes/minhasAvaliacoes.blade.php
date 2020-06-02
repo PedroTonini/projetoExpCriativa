@@ -21,13 +21,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($collection as $item)
+                                @foreach ($avaliacoes as $ava)
                                     <tr>
-                                        <td> {{}} </td>
-                                        <td> {{}} </td>
-                                        <td>  <a href="{{ URL::to('funcionario/avaliacoes/detalhamento/'.) }}" class="btn btn-sm btn-info"> Detalhes </a></td>
+                                        <td> {{$ava->id}} </td>
+                                        <td> {{$ava->created_at->format('d/m/Y')}} </td>
+                                        <td>  <a href="{{ URL::to('funcionario/avaliacoes/detalhamento/'.$ava->id) }}" class="btn btn-sm btn-info"> Detalhes </a></td>
                                     </tr>
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
