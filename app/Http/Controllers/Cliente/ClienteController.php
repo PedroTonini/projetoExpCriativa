@@ -97,14 +97,14 @@ class ClienteController extends Controller
         $aval->opiProduto = request('opiProduto');
         $aval->compra_id = $id;
         $aval->user_id = $userId;
-        // $aval->save();
+        $aval->save();
 
         // dar promoçao ao cliente
         $promo = Promocao::inRandomOrder()->first()->id;
         $relacionamento = new ClientePromocao();
         $relacionamento->user_id = $userId;
         $relacionamento->promocao_id = $promo;
-        // $relacionamento->save();
+        $relacionamento->save();
 
         // Mandar email para o clinte alertando que recebeu a promocao
         $userEmail = Auth::user()->email;
