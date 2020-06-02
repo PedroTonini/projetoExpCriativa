@@ -27,7 +27,7 @@
                             <tr>
                                 <td>{{ $cargo->id }}</td>
                                 <td>{{ $cargo->nome }}</td>
-                                <td>R$ {{ number_format($cargo->valor, '2', ',', '.') }}</td>
+                                <td>R$ {{ number_format($cargo->salario, '2', ',', '.') }}</td>
                                 <td>
                                 <form action="{{ URL::to('admin/cargos/'.$cargo->id) }}" method="POST" onsubmit="if (!confirm('Deseja realmente excluir esse cargo?')) return false;">
                                 <input type="hidden" name="_method" value="DELETE">

@@ -30,6 +30,7 @@ class PromocoesController extends Controller
         $promocoes = new Promocao();
         $promocoes->nome = $request->input('nome');
         $promocoes->valor = $request->input('valor');
+        $promocoes->validade = $request->input('vencimento');
         $promocoes->promoCode = $request->input('codigo');
         $promocoes->save();
         return redirect('admin/promocoes')->with( 'Promoção criada com sucesso');
@@ -72,7 +73,8 @@ class PromocoesController extends Controller
     {
         $promocoes = Promocao::find($id);
         $promocoes->nome = $request->input('nome');
-        $promocoes->valor = $request->input('descricao');
+        $promocoes->valor = $request->input('valor');
+        $promocoes->validade = $request->input('vencimento');
         $promocoes->promoCode = $request->input('codigo');
         $promocoes->save();
         return redirect('admin/promocoes')->with('status', 'Promoção atualizado com sucesso');

@@ -84,7 +84,7 @@ class CargosController extends Controller
      */
     public function destroy($id)
     {
-        Cargo::where('id',$id)->delete();
+        Cargo::where('id', $id)->delete();
         
         return redirect('admin/cargos')->with('status', 'Cargo excluído com sucesso');
     }

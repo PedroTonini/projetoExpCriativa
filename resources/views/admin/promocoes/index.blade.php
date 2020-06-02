@@ -44,6 +44,7 @@
                                     {{ csrf_field() }}
                                 <a href="{{ URL::to('admin/promocoes/edit/'.$promocao->id) }}" class="btn btn-sm btn-primary">Editar</a>
                                     <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
+                                </form>
                                 </td>
                             </tr>
                         @endforeach

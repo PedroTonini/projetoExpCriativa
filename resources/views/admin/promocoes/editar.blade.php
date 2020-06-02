@@ -24,7 +24,10 @@
             <input class="form-control" type="text" name="nome" placeholder="Nome da promoção" value="{{$promocoes->nome}}"> <br>
     
             Insira a nova descrição/valor da promoção:
-            <input class="form-control" type="textarea" name="descricao" placeholder="Descrição da promoção" value="{{$promocoes->valor}}"> <br>
+            <input class="form-control" type="textarea" name="valor" placeholder="Descrição da promoção" value="{{$promocoes->valor}}"> <br>
+
+            Insira a data de validade final da promoção:
+            <input class="form-control" type="date" name="vencimento" placeholder="mm/dd/aaaa" value="{{$promocoes->validade}}"> <br>
             
             Insira o novo código da promoção:
             <input class="form-control" type="text" name="codigo" placeholder="Codigo da promoção" value="{{$promocoes->promoCode}}"> <br>
