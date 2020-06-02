@@ -7,8 +7,8 @@
 @stop
 
 @section('content')
-    <div class="container">
-        <div class="box">            
+    <div class="card">
+        <div class="card-body">            
           <div class="table-scrollable">
               <table class="table table-bordered table-hover">
                 <thead>
@@ -26,7 +26,7 @@
                             <td>{{ $func->cargo }}</td>
                             <td>{{ $func->telefone}}</td>
                             <td>
-                                <a href="{{ URL::to('/funcionario/avaliacoes/pagAvaliacao') }}" class="btn btn-sm btn-outline-primary"> Avaliar </a>
+                                <a href="{{ URL::to('/funcionario/avaliacoes/pagAvaliacao/'.$func->id) }}" class="btn btn-sm btn-outline-primary"> Avaliar </a>
                             </td>
                         </tr>
                     @endforeach
