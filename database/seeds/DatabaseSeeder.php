@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SMSMarketingsTableSeeder::class);
         $this->call(Cliente_PromocaosTableSeeder::class);
         $this->call(AvaliacaoDeComprasTableSeeder::class);
+        $this->call(AvaliacaoFuncsTableSeeder::class);
     }
 }
